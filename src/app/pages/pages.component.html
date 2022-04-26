@@ -1,0 +1,41 @@
+<div class="layout-container">
+  <div class="layout-header">
+    <div class="header-top">
+      <div class="logo">
+        <img src="assets/images/logo.png" alt="logo">
+      </div>
+      <div class="action">
+        <div class="search">
+          <input nz-input placeholder="请搜索" [(ngModel)]="searchValue" />
+        </div>
+        <div class="userinfo">
+          <img src="assets/images/account.png" alt="account">
+          <span class="username">欢迎您，楼雪峰123</span>
+        </div>
+      </div>
+    </div>
+    <div class="nav-menu">
+      <nav>
+        <a routerLink="/pages/user-manage" routerLinkActive="active">
+          <span>用户管理</span>
+          <i></i>
+        </a>
+        <a routerLink="/pages/company-manage" routerLinkActive="active">
+          <span>企业管理</span>
+          <i></i>
+        </a>
+        <a routerLink="/pages/department-manage" routerLinkActive="active">
+          <span>科室管理</span>
+          <i></i>
+        </a>
+        <a routerLink="/pages/application-manage" routerLinkActive="active">
+          <span>应用管理</span>
+          <i></i>
+        </a>
+      </nav>
+    </div>
+  </div>
+  <div class="layout-content">
+    <router-outlet></router-outlet>
+  </div>
+</div>
