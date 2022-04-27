@@ -37,8 +37,18 @@
     display: flex;
     height: 2rem;
     margin-right: 2rem;
-    input {
-      border-radius: 1rem;
+    .ant-input-affix-wrapper {
+      border-radius: 18px;
+      background-color: rgba(255,255,255,.5);
+      border: none;
+      color: #fff;
+      .ant-input {
+        background: none;
+        color: #fff;
+        &::placeholder {
+          color: #fff;
+        }
+      }
     }
   }
   .userinfo {
@@ -52,6 +62,10 @@
     }
     .username {
       margin-left: .5rem;
+      color: #fff;
+    }
+    .anticon-down {
+      margin-left: 10px;
       color: #fff;
     }
   }
@@ -95,4 +109,39 @@
   padding: 1rem 1rem 0;
   border-radius: 8px;
   background-color: #fff;
+
+  .table-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    .title {
+      display: flex;
+      width: 100px;
+      h1 {
+        margin: 0;
+        padding: 0 10px;
+        height: 20px;
+        line-height: 20px;
+        font-size: 16px;
+        border-left: 4px solid #319BFD;
+      }
+    }
+    .actions {
+      display: flex;
+      flex: 1;
+      justify-content: flex-end;
+
+      .ant-form-item {
+        margin-left: 16px;
+        margin-right: 0;
+      }
+      .ant-input {
+        width: 186px;
+        border-radius: 15px;
+      }
+      .ant-btn {
+        border-radius: 15px;
+      }
+    }
+  }
 }

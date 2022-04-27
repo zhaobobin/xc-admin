@@ -1,4 +1,70 @@
 <div class="table-container">
+  <div class="table-header">
+    <div class="title">
+      <h1>{{title}}</h1>
+    </div>
+    <div class="actions">
+      <form nz-form [nzLayout]="'inline'" [formGroup]="validateForm">
+        <nz-form-item>
+          <nz-form-label [nzSm]="8">证件号码</nz-form-label>
+          <nz-form-control [nzSm]="16">
+            <nz-input-group>
+              <input formControlName="idcard" nz-input placeholder="请输入" />
+            </nz-input-group>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-label [nzSm]="8">姓名</nz-form-label>
+          <nz-form-control [nzSm]="16">
+            <nz-input-group>
+              <input formControlName="name" nz-input placeholder="请输入" />
+            </nz-input-group>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-label [nzSm]="8">手机号码</nz-form-label>
+          <nz-form-control [nzSm]="16">
+            <nz-input-group>
+              <input formControlName="mobile" nz-input placeholder="请输入" />
+            </nz-input-group>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-control>
+            <button nz-button nzType="primary" (click)="search()">
+              <i nz-icon nzType="search"></i>
+              <span>查询</span>
+            </button>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-control>
+            <button nz-button nzType="primary" (click)="newData()">
+              <i nz-icon nzType="plus"></i>
+              <span>新增</span>
+            </button>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-control>
+            <button nz-button (click)="resetForm($event)">
+              <i nz-icon nzType="clear"></i>
+              <span>条件清空</span>
+            </button>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-control>
+            <button nz-button nzType="primary" (click)="importData()">
+              <i nz-icon nzType="download"></i>
+              <span>批量导入</span>
+            </button>
+          </nz-form-control>
+        </nz-form-item>
+      </form>
+    </div>
+  </div>
+
   <nz-table #basicTable [nzData]="listOfData">
     <thead>
       <tr>

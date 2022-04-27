@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 interface Person {
   key: number;
@@ -14,13 +15,23 @@ interface Person {
   templateUrl: './user-manage.component.html',
   styleUrls: ['../pages.component.less', './user-manage.component.less']
 })
-export class UserManageComponent {
+export class UserManageComponent implements OnInit {
   title = '用户管理';
   
   listOfData: Person[] = [];
 
+  validateForm!: FormGroup;
+
+  constructor(private fb: FormBuilder) {}
+
   ngOnInit() {
     this.initList();
+
+    this.validateForm = this.fb.group({
+      idcard: [null],
+      name: [null],
+      mobile: [null]
+    });
   }
 
   initList = () => {
@@ -33,7 +44,7 @@ export class UserManageComponent {
       company: '人力资源社会保障局',
       account: 'lizhinan'
     }
-    for (let i = 1; i < 50; i++) {
+    for (let i = 1; i <= 50; i++) {
       const item = {
         key: i,
         ...data
@@ -42,4 +53,37 @@ export class UserManageComponent {
     }
     this.listOfData = arr;
   }
+
+  search = () => {
+    if (this.validateForm.valid) {
+      console.log('submit', this.validateForm.value);
+    } else {
+      Object.values(this.validateForm.controls).forEach(control => {
+        if (control.invalid) {
+          control.markAsDirty();
+          control.updateValueAndValidity({ onlySelf: true });
+        }
+      });
+    }
+  }
+
+  newData = () => {
+
+  }
+
+  resetForm(e: MouseEvent): void {
+    e.preventDefault();
+    this.validateForm.reset();
+    for (const key in this.validateForm.controls) {
+      if (this.validateForm.controls.hasOwnProperty(key)) {
+        this.validateForm.controls[key].markAsPristine();
+        this.validateForm.controls[key].updateValueAndValidity();
+      }
+    }
+  }
+
+  importData = () => {
+
+  }
+
 }

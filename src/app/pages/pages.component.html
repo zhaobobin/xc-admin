@@ -6,29 +6,41 @@
       </div>
       <div class="action">
         <div class="search">
-          <input nz-input placeholder="请搜索" [(ngModel)]="searchValue" />
+          <nz-input-group nzPrefixIcon="search">
+            <input nz-input placeholder="请搜索" [(ngModel)]="searchValue" (change)="search()" />
+          </nz-input-group>
         </div>
-        <div class="userinfo">
+        <a class="userinfo" nz-dropdown [nzDropdownMenu]="menu">
           <img src="assets/images/account.png" alt="account">
           <span class="username">欢迎您，楼雪峰123</span>
-        </div>
+          <i nz-icon nzType="down"></i>
+        </a>
+        <nz-dropdown-menu #menu="nzDropdownMenu">
+          <ul nz-menu>
+            <li nz-menu-item (click)="logout()">安全退出</li>
+          </ul>
+        </nz-dropdown-menu>
       </div>
     </div>
     <div class="nav-menu">
       <nav>
-        <a routerLink="/pages/user-manage" routerLinkActive="active">
+        <a routerLinkActive="active">
+          <span>工作台</span>
+          <i></i>
+        </a>
+        <a routerLink="/pages/user" routerLinkActive="active">
           <span>用户管理</span>
           <i></i>
         </a>
-        <a routerLink="/pages/company-manage" routerLinkActive="active">
+        <a routerLink="/pages/company" routerLinkActive="active">
           <span>企业管理</span>
           <i></i>
         </a>
-        <a routerLink="/pages/department-manage" routerLinkActive="active">
+        <a routerLink="/pages/department" routerLinkActive="active">
           <span>科室管理</span>
           <i></i>
         </a>
-        <a routerLink="/pages/application-manage" routerLinkActive="active">
+        <a routerLink="/pages/application" routerLinkActive="active">
           <span>应用管理</span>
           <i></i>
         </a>

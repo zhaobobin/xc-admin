@@ -47,24 +47,24 @@ export const routes: Routes = [
     component: PagesComponent,
     children: [
       {
-        path: 'user-manage',
+        path: 'user',
         component: UserManageComponent,
       },
       {
-        path: 'company-manage',
+        path: 'company',
         component: CompanyManageComponent,
       },
       {
-        path: 'department-manage',
+        path: 'department',
         component: DepartmentManageComponent,
       },
       {
-        path: 'application-manage',
+        path: 'application',
         component: ApplicationManageComponent,
       },
       {
         path: '',
-        redirectTo: 'user-manage',
+        redirectTo: 'user',
         pathMatch: 'full',
       },
       {

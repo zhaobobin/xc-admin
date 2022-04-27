@@ -13,11 +13,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 
 // antd
+import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzTableModule } from 'ng-zorro-antd/table';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
+import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
 
 import { NotFoundComponent } from './pages/other/not-found.component';
 
@@ -54,11 +56,13 @@ registerLocaleData(en);
     HttpClientModule,
     BrowserAnimationsModule,
     RouterModule,
+    NzIconModule,
     NzButtonModule,
     NzTableModule,
     NzFormModule,
     NzInputModule,
-    NzCheckboxModule
+    NzCheckboxModule,
+    NzDropDownModule
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent]
