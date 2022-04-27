@@ -7,7 +7,7 @@ import { NZ_I18N } from 'ng-zorro-antd/i18n';
 import { en_US } from 'ng-zorro-antd/i18n';
 import { registerLocaleData } from '@angular/common';
 import en from '@angular/common/locales/en';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
@@ -17,12 +17,13 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzTableModule } from 'ng-zorro-antd/table';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 
 import { NotFoundComponent } from './pages/other/not-found.component';
 
 import { AuthComponent } from './auth/auth.component';
-import { UserLoginComponent } from './auth/login/login.component';
-import { UserRegisterComponent } from './auth/register/register.component';
+import { AuthPsdComponent } from './auth/psd/psd.component';
+import { AuthSmsComponent } from './auth/sms/sms.component';
 
 import { PagesComponent } from './pages/pages.component';
 import { UserManageComponent } from './pages/user-manage/user-manage.component';
@@ -37,8 +38,8 @@ registerLocaleData(en);
     AppComponent,
     NotFoundComponent,
     AuthComponent,
-    UserLoginComponent,
-    UserRegisterComponent,
+    AuthPsdComponent,
+    AuthSmsComponent,
     PagesComponent,
     UserManageComponent,
     CompanyManageComponent,
@@ -49,6 +50,7 @@ registerLocaleData(en);
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
     RouterModule,
@@ -56,6 +58,7 @@ registerLocaleData(en);
     NzTableModule,
     NzFormModule,
     NzInputModule,
+    NzCheckboxModule
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent]

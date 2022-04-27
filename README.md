@@ -25,3 +25,12 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+npm i -g @angular/cli@13.2.1
+ng new xc-admin --style less
+cd xc-admin
+npm i
+
+ng add ng-zorro-antd
+Or
+npm i ng-zorro-antd@13.0.0 --save

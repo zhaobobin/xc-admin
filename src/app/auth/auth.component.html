@@ -1,0 +1,35 @@
+<div class="auth-container">
+
+  <div class="title"></div>
+
+  <div class="main">
+    <div class="content">
+      <div class="row">
+        <div class="router-wrapper">
+          <div class="menu">
+            <nav>
+              <a routerLink="/auth/psd" routerLinkActive="active">
+                <span>密码登录</span>
+                <i></i>
+              </a>
+              <a routerLink="/auth/sms" routerLinkActive="active">
+                <span>短信登录</span>
+                <i></i>
+              </a>
+              <a routerLink="/auth/scan" routerLinkActive="active">
+                <span>扫码登录</span>
+                <i></i>
+              </a>
+            </nav>
+          </div>
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="copyright">
+    <p>{{copyRightText}}</p>
+  </div>
+
+</div>

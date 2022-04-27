@@ -1,0 +1,7 @@
+<div class="scan">
+  <p class="tab">
+    <span [class]="tabIndex === 1 ? 'active' : null" (click)="clickTab(1)">钉钉</span>
+    <span [class]="tabIndex === 2 ? 'active' : null" (click)="clickTab(2)">电子社保卡</span>
+  </p>
+  <img [src]="scanMa" alt="scan" class="ma">
+</div>

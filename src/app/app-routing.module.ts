@@ -4,8 +4,9 @@ import { NgModule } from '@angular/core';
 import { NotFoundComponent } from './pages/other/not-found.component';
 
 import { AuthComponent } from './auth/auth.component';
-import { UserLoginComponent } from './auth/login/login.component';
-import { UserRegisterComponent } from './auth/register/register.component';
+import { AuthPsdComponent } from './auth/psd/psd.component';
+import { AuthSmsComponent } from './auth/sms/sms.component';
+import { AuthScanComponent } from './auth/scan/scan.component';
 
 import { PagesComponent } from './pages/pages.component';
 import { UserManageComponent } from './pages/user-manage/user-manage.component';
@@ -19,16 +20,20 @@ export const routes: Routes = [
     component: AuthComponent,
     children: [
       {
-        path: 'login',
-        component: UserLoginComponent,
+        path: 'psd',
+        component: AuthPsdComponent,
       },
       {
-        path: 'register',
-        component: UserRegisterComponent,
+        path: 'sms',
+        component: AuthSmsComponent,
+      },
+      {
+        path: 'scan',
+        component: AuthScanComponent,
       },
       {
         path: '',
-        redirectTo: 'login',
+        redirectTo: 'psd',
         pathMatch: 'full',
       },
       {
