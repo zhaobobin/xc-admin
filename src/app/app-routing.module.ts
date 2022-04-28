@@ -9,6 +9,7 @@ import { AuthSmsComponent } from './auth/sms/sms.component';
 import { AuthScanComponent } from './auth/scan/scan.component';
 
 import { PagesComponent } from './pages/pages.component';
+import { WorkbenchComponent } from './pages/workbench/workbench.component';
 import { UserManageComponent } from './pages/user-manage/user-manage.component';
 import { CompanyManageComponent } from './pages/company-manage/company-manage.component';
 import { DepartmentManageComponent } from './pages/department-manage/department-manage.component';
@@ -47,6 +48,10 @@ export const routes: Routes = [
     component: PagesComponent,
     children: [
       {
+        path: 'workbench',
+        component: WorkbenchComponent,
+      },
+      {
         path: 'user',
         component: UserManageComponent,
       },
@@ -64,7 +69,7 @@ export const routes: Routes = [
       },
       {
         path: '',
-        redirectTo: 'user',
+        redirectTo: 'workbench',
         pathMatch: 'full',
       },
       {

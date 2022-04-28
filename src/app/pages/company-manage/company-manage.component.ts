@@ -13,7 +13,7 @@ interface Person {
   styleUrls: ['../pages.component.less', './company-manage.component.less']
 })
 export class CompanyManageComponent {
-  title = '企业管理';
+  title = '单位管理';
   listOfData: Person[] = [
     {
       key: '1',

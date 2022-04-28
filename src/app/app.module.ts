@@ -13,6 +13,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 
 // antd
+import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzTableModule } from 'ng-zorro-antd/table';
@@ -28,6 +29,7 @@ import { AuthPsdComponent } from './auth/psd/psd.component';
 import { AuthSmsComponent } from './auth/sms/sms.component';
 
 import { PagesComponent } from './pages/pages.component';
+import { WorkbenchComponent } from './pages/workbench/workbench.component';
 import { UserManageComponent } from './pages/user-manage/user-manage.component';
 import { CompanyManageComponent } from './pages/company-manage/company-manage.component';
 import { DepartmentManageComponent } from './pages/department-manage/department-manage.component';
@@ -43,6 +45,7 @@ registerLocaleData(en);
     AuthPsdComponent,
     AuthSmsComponent,
     PagesComponent,
+    WorkbenchComponent,
     UserManageComponent,
     CompanyManageComponent,
     DepartmentManageComponent,
@@ -56,6 +59,7 @@ registerLocaleData(en);
     HttpClientModule,
     BrowserAnimationsModule,
     RouterModule,
+    NzGridModule,
     NzIconModule,
     NzButtonModule,
     NzTableModule,
