@@ -1,20 +1,85 @@
-<div>
+<div class="table-container">
+  <div class="table-header">
+    <div class="title">
+      <h1>{{title}}</h1>
+    </div>
+    <div class="actions">
+      <form nz-form [nzLayout]="'inline'" [formGroup]="validateForm">
+        <nz-form-item>
+          <nz-form-label [nzSm]="8">企业名称</nz-form-label>
+          <nz-form-control [nzSm]="16">
+            <nz-input-group>
+              <input formControlName="name" nz-input placeholder="请输入" />
+            </nz-input-group>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-label [nzSm]="8">手机号码</nz-form-label>
+          <nz-form-control [nzSm]="16">
+            <nz-input-group>
+              <input formControlName="mobile" nz-input placeholder="请输入" />
+            </nz-input-group>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-control>
+            <button nz-button nzType="primary" (click)="search()">
+              <i nz-icon nzType="search"></i>
+              <span>查询</span>
+            </button>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-control>
+            <button nz-button nzType="primary" (click)="newData()">
+              <i nz-icon nzType="plus"></i>
+              <span>新增</span>
+            </button>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-control>
+            <button nz-button (click)="resetForm($event)">
+              <i nz-icon nzType="clear"></i>
+              <span>条件清空</span>
+            </button>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-control>
+            <button nz-button nzType="primary" (click)="importData()">
+              <i nz-icon nzType="download"></i>
+              <span>批量导入</span>
+            </button>
+          </nz-form-control>
+        </nz-form-item>
+      </form>
+    </div>
+  </div>
+
   <nz-table #basicTable [nzData]="listOfData">
     <thead>
       <tr>
-        <th>Name</th>
-        <th>Age</th>
-        <th>Address</th>
-        <th>Action</th>
+        <th>编号</th>
+        <th>企业名称</th>
+        <th>证件号码</th>
+        <th>所在单位</th>
+        <th>登录账号</th>
+        <th>操作</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let data of basicTable.data">
+        <td>{{ data.key }}</td>
         <td>{{ data.name }}</td>
-        <td>{{ data.age }}</td>
-        <td>{{ data.address }}</td>
+        <td>{{ data.idcard }}</td>
+        <td>{{ data.company }}</td>
+        <td>{{ data.account }}</td>
         <td>
-          <a>编辑</a>
+          <a class="table-action">
+            <i nz-icon nzType="edit"></i>
+            <span>编辑</span>
+          </a>
         </td>
       </tr>
     </tbody>

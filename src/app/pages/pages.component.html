@@ -24,24 +24,13 @@
     </div>
     <div class="nav-menu">
       <nav>
-        <a routerLink="/pages/workbench" routerLinkActive="active">
-          <span>工作台</span>
-          <i></i>
-        </a>
-        <a routerLink="/pages/user" routerLinkActive="active">
-          <span>用户管理</span>
-          <i></i>
-        </a>
-        <a routerLink="/pages/company" routerLinkActive="active">
-          <span>单位管理</span>
-          <i></i>
-        </a>
-        <a routerLink="/pages/department" routerLinkActive="active">
-          <span>科室管理</span>
-          <i></i>
-        </a>
-        <a routerLink="/pages/application" routerLinkActive="active">
-          <span>应用管理</span>
+        <a 
+          *ngFor="let item of menus"
+          [routerLink]="item.path" 
+          routerLinkActive="active"
+        >
+          <img [src]="item.icon" alt="icon" class="icon">
+          <span>{{ item.name }}</span>
           <i></i>
         </a>
       </nav>
