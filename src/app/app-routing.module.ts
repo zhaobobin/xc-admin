@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { NotFoundComponent } from './pages/other/not-found.component';
 
+import { AuthLoginComponent } from './auth/login/login.component';
 import { AuthComponent } from './auth/auth.component';
 import { AuthPsdComponent } from './auth/psd/psd.component';
 import { AuthSmsComponent } from './auth/sms/sms.component';
@@ -16,6 +17,10 @@ import { DepartmentManageComponent } from './pages/department-manage/department-
 import { ApplicationManageComponent } from './pages/application-manage/application-manage.component';
 
 export const routes: Routes = [
+  {
+    path: 'login',
+    component: AuthLoginComponent,
+  },
   {
     path: 'auth',
     component: AuthComponent,

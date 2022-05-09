@@ -1,0 +1,48 @@
+<div class="layout-container">
+  <div class="layout-header">
+    <div class="header-top">
+      <div class="header-top-wrapper">
+        <div class="logo">
+          <img src="assets/images/logo.png" alt="logo">
+        </div>
+        <div class="action">
+          <div class="search">
+            <nz-input-group nzPrefixIcon="search">
+              <input nz-input placeholder="请搜索" [(ngModel)]="searchValue" (change)="search()" />
+            </nz-input-group>
+          </div>
+          <a class="userinfo" nz-dropdown [nzDropdownMenu]="menu">
+            <img src="assets/images/account.png" alt="account">
+            <span class="username">欢迎您，楼雪峰123</span>
+            <i nz-icon nzType="down"></i>
+          </a>
+          <nz-dropdown-menu #menu="nzDropdownMenu">
+            <ul nz-menu>
+              <li nz-menu-item (click)="logout()">安全退出</li>
+            </ul>
+          </nz-dropdown-menu>
+        </div>
+      </div>
+      <div class="header-top-blank"></div>
+    </div>
+    <div class="nav-menu">
+      <nav>
+        <a 
+          *ngFor="let item of menus2"
+          [routerLink]="item.path" 
+          routerLinkActive="active"
+        >
+          <img [src]="item.icon" alt="icon" class="icon">
+          <span>{{ item.name }}</span>
+        </a>
+      </nav>
+    </div>
+  </div>
+  <div class="layout-content">
+    <router-outlet></router-outlet>
+    <div class="copy-right">
+      <span>{{copyRightText}}</span>
+    </div>
+  </div>
+
+</div>

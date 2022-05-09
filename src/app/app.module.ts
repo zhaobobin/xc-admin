@@ -24,6 +24,7 @@ import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
 
 import { NotFoundComponent } from './pages/other/not-found.component';
 
+import { AuthLoginComponent } from './auth/login/login.component';
 import { AuthComponent } from './auth/auth.component';
 import { AuthPsdComponent } from './auth/psd/psd.component';
 import { AuthSmsComponent } from './auth/sms/sms.component';
@@ -41,6 +42,7 @@ registerLocaleData(en);
   declarations: [
     AppComponent,
     NotFoundComponent,
+    AuthLoginComponent,
     AuthComponent,
     AuthPsdComponent,
     AuthSmsComponent,

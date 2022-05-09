@@ -1,0 +1,38 @@
+<div class="login-container">
+
+  <div class="login-wrapper">
+    <div class="left">
+      <p class="logo">
+        <img src="assets/images/login_logo.png" alt="logo">
+      </p>
+      <p class="title">
+        <img src="assets/images/login_title.png" alt="title">
+      </p>
+    </div>
+
+    <div class="right">
+      <form nz-form [formGroup]="validateForm" class="login-form" (ngSubmit)="submitForm()">
+        <h1>{{title}}</h1>
+        <nz-form-item>
+          <nz-form-control nzErrorTip="请输入用户名!">
+            <nz-input-group nzPrefixIcon="user">
+              <input type="text" nz-input nzSize="large" formControlName="userName" placeholder="请输入用户名" />
+            </nz-input-group>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-control nzErrorTip="请输入密码!">
+            <nz-input-group nzPrefixIcon="lock">
+              <input type="password" nz-input nzSize="large" formControlName="password" placeholder="请输入密码" />
+            </nz-input-group>
+          </nz-form-control>
+        </nz-form-item>
+        <button nz-button class="login-form-button" [nzType]="'primary'">登录</button>
+      </form>
+    </div>
+
+  </div>
+
+  <p class="copy-right">{{copyRightText}}</p>
+
+</div>
