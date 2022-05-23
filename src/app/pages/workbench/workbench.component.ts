@@ -98,7 +98,7 @@ export class WorkbenchComponent {
       title: '关于五一劳动节放假通知',
       time: '2022-04-26 12:00',
     }
-    for (let i = 1; i <= 5; i++) {
+    for (let i = 1; i <= 4; i++) {
       const item = {
         key: i,
         new: Boolean(i <= 2),

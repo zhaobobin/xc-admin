@@ -3,7 +3,7 @@
   <div nz-col nzMd="24" nzLg="22" nzXl="20" nzXXl="18">
     <div class="workbench">
       <div nz-row [nzGutter]="15">
-        <div nz-col nzSpan="16">
+        <div nz-col nzSpan="15">
           <div class="section basic-info">
             <img [src]="basicInfo.headUrl" alt="account" />
             <div class="info-text">
@@ -52,7 +52,7 @@
             </div>
           </div>
         </div>
-        <div nz-col nzSpan="8">
+        <div nz-col nzSpan="9">
           <div class="section todo-list">
             <div class="header">
               <h2>待办事项</h2>
@@ -89,7 +89,10 @@
                   <img src="assets/images/notice_icon.png" alt="icon" />
                 </div>
                 <div class="text">
-                  <p class="title">{{ item.title }}</p>
+                  <p class="title">
+                    <span>{{ item.title }}</span>
+                    <span *ngIf="item.new" class="new">NEW</span>
+                  </p>
                 </div>
                 <span class="time">{{ item.time }}</span>
               </div>
