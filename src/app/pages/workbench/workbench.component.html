@@ -23,29 +23,11 @@
             </div>
             <div class="list">
               <div nz-row [nzGutter]="20">
-                <div nz-col nzSpan="12" *ngFor="let item of appList">
+                <div nz-col nzSpan="8" *ngFor="let item of appList2">
                   <a class="app-item">
-                    <div
-                      class="icon"
-                      [ngStyle]="{ background: item.iconColor }"
-                    >
-                      <img [src]="item.icon" alt="icon" />
-                    </div>
-                    <div class="info">
-                      <p>
-                        <span class="name">{{ item.name }}</span>
-                        <span class="host">{{ item.host }}</span>
-                      </p>
-                      <p class="desc">
-                        <span>{{ item.desc }}</span>
-                      </p>
-                      <p class="group">
-                        <span>{{ item.group }}</span>
-                      </p>
-                      <p class="date">
-                        <span>{{ item.date }}</span>
-                      </p>
-                    </div>
+                    <img [src]="item.icon" alt="icon" class="icon" />
+                    <span class="name">{{ item.name }}</span>
+                    <span class="host">{{ item.host }}</span>
                   </a>
                 </div>
               </div>

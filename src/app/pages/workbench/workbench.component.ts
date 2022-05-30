@@ -72,7 +72,26 @@ export class WorkbenchComponent {
     },
   ];
 
+  appList2: any[] = [];
+
   todoList: any[] = [];
+
+  initAppList = () => {
+    const arr = [];
+    const data = {
+      name: '统一门户',
+      host: '政务网',
+    }
+    for (let i = 1; i <= 12; i++) {
+      const item = {
+        key: i,
+        ...data,
+        icon: `assets/images/app_icon_${i}.png`
+      }
+      arr.push(item);
+    }
+    this.appList2 = arr;
+  }
 
   initTodoList = () => {
     const arr = [];
@@ -80,7 +99,7 @@ export class WorkbenchComponent {
       title: '人力资源招聘会人员名单录入',
       desc: '人力资源招聘会人员名单录入'
     }
-    for (let i = 1; i <= 5; i++) {
+    for (let i = 1; i <= 4; i++) {
       const item = {
         key: i,
         ...data
@@ -98,7 +117,7 @@ export class WorkbenchComponent {
       title: '关于五一劳动节放假通知',
       time: '2022-04-26 12:00',
     }
-    for (let i = 1; i <= 4; i++) {
+    for (let i = 1; i <= 3; i++) {
       const item = {
         key: i,
         new: Boolean(i <= 2),
@@ -110,6 +129,7 @@ export class WorkbenchComponent {
   }
 
   ngOnInit() {
+    this.initAppList();
     this.initTodoList();
     this.initNoticeList();
   }

@@ -1,18 +1,18 @@
 .layout-container {
   height: 100vh;
+  background: url(../../assets/images/admin_bg.png) no-repeat center center;
+  background-size: cover;
 }
 .layout-header {
   width: 100%;
-  position: fixed;
-  left: 0;
-  top: 0;
-  z-index: 999;
+  // position: fixed;
+  // left: 0;
+  // top: 0;
+  // z-index: 999;
 }
 .layout-content {
-  padding: 15rem 1rem 0 1rem;
+  padding: 1rem 1rem 10.5rem;
   height: 100%;
-  background: url(../../assets/images/admin_bg.jpg) no-repeat center center;
-  background-size: cover;
   overflow: auto;
 
   .copy-right {
@@ -30,10 +30,9 @@
 .header-top {
   display: flex;
   flex-direction: column;
-  height: 10rem;
+  justify-content: center;
+  height: 6.6rem;
   padding: 0 2rem;
-  background: url(../../assets/images/header_bg.jpg) no-repeat center center #319BFD;
-  background-size: cover;
 
   .header-top-wrapper {
     display: flex;
@@ -99,7 +98,7 @@
   display: flex;
   align-items: center;
   height: 4rem;
-  padding: 0 2rem;
+  margin: 0 .7rem;
   background-color: #0048DB;
   box-shadow: 0rem 0rem 1rem 0rem rgba(205, 205, 205, 0.38);
   nav {
@@ -111,16 +110,16 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100%;
-    margin: 0 1.5rem;
-    padding: 0 .5rem;
+    height: 4rem;
+    padding: 0 2rem;
     text-decoration: none;
     color: #fff;
     position: relative;
     .icon {
       margin-bottom: 0.5rem;
       width: auto;
-      height: 1.2rem
+      height: 1.2rem;
+      opacity: .5;
     }
     i {
       display: block;
@@ -132,8 +131,14 @@
       left: 0;
       bottom: 0;
     }
-    &.active i {
-      opacity: 1;
+    &.active {
+      background: #5d85df;
+      .icon {
+        opacity: 1;
+      }
+      i {
+        opacity: 1;
+      }
     }
   }
 }

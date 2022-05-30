@@ -94,7 +94,7 @@
     .icon {
       margin-right: 0.5rem;
       width: auto;
-      height: 1.2rem
+      height: 1.2rem;
     }
     i {
       display: block;
@@ -119,12 +119,9 @@
   background-color: #fff;
 
   .table-header {
-    display: flex;
-    align-items: center;
     margin-bottom: 1rem;
     .title {
-      display: flex;
-      width: 8rem;
+      margin-bottom: 1.5rem;
       h1 {
         padding: 0 0.7rem;
         height: 1.14rem;
@@ -134,13 +131,12 @@
       }
     }
     .actions {
-      display: flex;
-      flex: 1;
       justify-content: flex-end;
 
       .ant-form-item {
         margin-left: 0.64rem;
         margin-right: 0;
+        margin-bottom: 1rem;
       }
       .ant-form-item-label {
         min-width: 4.5rem;
@@ -152,6 +148,11 @@
       .ant-btn {
         border-radius: 1rem;
       }
+    }
+    .btn-group {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
     }
   }
 
