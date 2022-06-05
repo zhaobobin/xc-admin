@@ -17,58 +17,65 @@ export class WorkbenchComponent {
 
   appList = [
     {
-      name: '统一门户',
+      name: '政务OA',
       host: '政务网',
-      desc: '以用户信息为基础，提供统一平台登录界面，提供个人门户功能',
-      icon: 'assets/images/app_icon_01.png',
-      iconColor: '#44CD99',
-      group: '苏州相城区信息中心',
-      date: '3天前登录过'
+      icon: 'assets/images/app_icon_1.png'
     },
     {
-      name: '统一门户',
+      name: '产业项目监管平台',
       host: '政务网',
-      desc: '政务通',
-      icon: 'assets/images/app_icon_02.png',
-      iconColor: '#FBC465',
-      group: '苏州相城区信息中心',
-      date: '3天前登录过'
+      icon: 'assets/images/app_icon_2.png'
     },
     {
-      name: '统一门户',
+      name: '政务OA',
       host: '政务网',
-      desc: '以用户信息为基础，提供统一平台登录界面，提供个人门户功能',
-      icon: 'assets/images/app_icon_01.png',
-      iconColor: '#F18C9F',
-      group: '苏州相城区信息中心',
-      date: '3天前登录过'
+      icon: 'assets/images/app_icon_3.png'
     },
     {
-      name: '统一门户',
+      name: '产业项目监管平台',
       host: '政务网',
-      desc: '政务通',
-      icon: 'assets/images/app_icon_02.png',
-      iconColor: '#5DB1FF',
-      group: '苏州相城区信息中心',
-      date: '3天前登录过'
+      icon: ''
     },
     {
-      name: '统一门户',
+      name: '政务OA',
       host: '政务网',
-      desc: '以用户信息为基础，提供统一平台登录界面，提供个人门户功能',
-      icon: 'assets/images/app_icon_01.png',
-      iconColor: '#8EA8FD',
-      group: '苏州相城区信息中心',
-      date: '3天前登录过'
+      icon: 'assets/images/app_icon_3.png'
     },
     {
-      name: '统一门户',
+      name: '产业项目监管平台',
       host: '政务网',
-      desc: '政务通',
-      icon: 'assets/images/app_icon_02.png',
-      iconColor: '#F57658',
-      group: '苏州相城区信息中心',
-      date: '3天前登录过'
+      icon: ''
+    },
+
+    {
+      name: '政务OA',
+      host: '政务网',
+      icon: ''
+    },
+    {
+      name: '相城区数据共享交换平台门户',
+      host: '政务网',
+      icon: 'assets/images/app_icon_3.png'
+    },
+    {
+      name: '政务OA',
+      host: '政务网',
+      icon: ''
+    },
+    {
+      name: '产业项目监管平台',
+      host: '政务网',
+      icon: ''
+    },
+    {
+      name: '政务OA',
+      host: '政务网',
+      icon: 'assets/images/app_icon_2.png'
+    },
+    {
+      name: '产业项目监管平台',
+      host: '政务网',
+      icon: ''
     },
   ];
 
@@ -79,13 +86,14 @@ export class WorkbenchComponent {
   initAppList = () => {
     const arr = [];
     const data = {
-      name: '统一门户',
+      name: '相城区数据共享交换平台门户',
       host: '政务网',
     }
     for (let i = 1; i <= 12; i++) {
       const item = {
         key: i,
         ...data,
+        name: i%2 === 0 ? '相城区数据共享交换平台门户' : '统一门户',
         icon: `assets/images/app_icon_${i}.png`
       }
       arr.push(item);
@@ -129,7 +137,7 @@ export class WorkbenchComponent {
   }
 
   ngOnInit() {
-    this.initAppList();
+    // this.initAppList();
     this.initTodoList();
     this.initNoticeList();
   }

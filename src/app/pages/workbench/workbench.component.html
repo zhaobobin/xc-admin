@@ -23,11 +23,16 @@
             </div>
             <div class="list">
               <div nz-row [nzGutter]="20">
-                <div nz-col nzSpan="8" *ngFor="let item of appList2">
+                <div nz-col nzSpan="8" *ngFor="let item of appList">
                   <a class="app-item">
-                    <img [src]="item.icon" alt="icon" class="icon" />
-                    <span class="name">{{ item.name }}</span>
-                    <span class="host">{{ item.host }}</span>
+                    <span class="icon">
+                      <img *ngIf="item.icon" [src]="item.icon" alt="icon" />
+                      <img *ngIf="!item.icon" src="assets/images/app_icon_default.png" alt="icon" />
+                    </span>
+                    <div class="info">
+                      <p class="name">{{ item.name }}</p>
+                      <p class="host"><span>{{ item.host }}</span></p>
+                    </div>
                   </a>
                 </div>
               </div>

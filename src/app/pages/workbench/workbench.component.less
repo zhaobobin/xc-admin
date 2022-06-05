@@ -62,35 +62,44 @@
   // app-list
   .app-list {
     .list {
-      padding: 1.36rem 1.57rem 0;
+      padding: 1.36rem 2rem 0;
     }
     .app-item {
       display: flex;
-      margin-bottom: 1.36rem;
+      height: 100%;
+      margin-bottom: .7rem;
       padding: 1.66rem 0;
-      align-items: center;
-      justify-content: center;
+      // align-items: center;
+      // justify-content: center;
       .icon {
         display: flex;
-        width: 3.14rem;
-        height: 3.14rem;
         margin-right: 1rem;
+        padding-top: .2rem;
+        img {
+          width: 3.14rem;
+          height: 3.14rem;
+        }
+      }
+      .info {
+        display: flex;
+        flex-direction: column;
       }
       .name {
-        display: flex;
         font-size: 1rem;
         font-weight: bold;
         color: #333333;
-        margin-right: 0.64rem;
+        margin-bottom: 0.5rem;
       }
       .host {
-        display: flex;
-        padding: 0.21rem 0.36rem;
-        background: #FFFFFF;
-        border: 1px solid #44CD99;
-        font-size: 0.86rem;
-        font-weight: 500;
-        color: #44CD99;
+        margin: 0;
+        span {
+          padding: 0.14rem 0.36rem;
+          background: #FFFFFF;
+          border: 1px solid #44CD99;
+          font-size: 0.86rem;
+          font-weight: 500;
+          color: #44CD99;
+        }
       }
     }
   }
