@@ -1,41 +1,80 @@
 <div class="login-container">
 
-  <div class="login-wrapper">
-    <div class="left">
-      <p class="logo">
-        <img src="assets/images/login_logo.png" alt="logo">
-      </p>
-      <p class="title">
-        <img src="assets/images/login_title2.png" alt="title">
-      </p>
-    </div>
-
-    <div class="right">
-      <form nz-form [formGroup]="validateForm" class="login-form" (ngSubmit)="submitForm()">
-        <h1>{{title}}</h1>
-        <nz-form-item>
-          <nz-form-control nzErrorTip="请输入用户名!">
-            <nz-input-group nzPrefixIcon="user">
-              <input type="text" nz-input nzSize="large" formControlName="userName" placeholder="请输入用户名" />
-            </nz-input-group>
-          </nz-form-control>
-        </nz-form-item>
-        <nz-form-item>
-          <nz-form-control nzErrorTip="请输入密码!">
-            <nz-input-group nzPrefixIcon="lock">
-              <input type="password" nz-input nzSize="large" formControlName="password" placeholder="请输入密码" />
-            </nz-input-group>
-          </nz-form-control>
-        </nz-form-item>
-        <button nz-button class="login-form-button" [nzType]="'primary'">登录</button>
-        <p class="scan">
-          <a>使用相政通扫一扫</a>
-        </p>
-      </form>
-    </div>
-
+  <div class="head">
+    <p class="logo">
+      <img src="assets/images/login/title.png" alt="logo">
+    </p>
   </div>
 
-  <p class="copy-right">{{copyRightText}}</p>
+  <div nz-row class="body">
+    <div nz-col nzMd="0" nzLg="1" nzXl="2" nzXXl="3"></div>
+    <div nz-col nzMd="24" nzLg="22" nzXl="20" nzXXl="18">
+      <div class="wrapper">
+        <div class="left area">
+          <div class="ball ball1">
+            <img src="assets/images/login/login_icon06.png" alt="login_icon">
+            <p>高效协同</p>
+          </div>
+          <div class="ball ball2">
+            <img src="assets/images/login/login_icon02.png" alt="login_icon">
+          </div>
+          <div class="ball ball3">
+            <img src="assets/images/login/login_icon05.png" alt="login_icon">
+            <p>统一规划</p>
+          </div>
+          <div class="ball ball4">
+            <img src="assets/images/login/login_icon07.png" alt="login_icon">
+          </div>
+          <div class="ball ball5">
+            <img src="assets/images/login/login_icon04.png" alt="login_icon">
+          </div>
+          <div class="ball ball6">
+            <img src="assets/images/login/login_icon03.png" alt="login_icon">
+          </div>
+          <div class="ball ball7">
+            <img src="assets/images/login/login_icon08.png" alt="login_icon">
+            <p>数治相城</p>
+          </div>
+          <div class="ball ball8">
+            <img src="assets/images/login/login_icon01.png" alt="login_icon">
+          </div>
+        </div>
+        <div class="right">
+          <form nz-form [formGroup]="validateForm" class="login-form" (ngSubmit)="submitForm()">
+            <h2>{{title}}</h2>
+            <nz-form-item>
+              <nz-form-control nzErrorTip="请输入用户名!">
+                <nz-input-group nzPrefixIcon="user">
+                  <input type="text" nz-input nzSize="large" formControlName="userName" placeholder="请输入用户名" />
+                </nz-input-group>
+              </nz-form-control>
+            </nz-form-item>
+            <nz-form-item>
+              <nz-form-control nzErrorTip="请输入密码!">
+                <nz-input-group nzPrefixIcon="lock">
+                  <input type="password" nz-input nzSize="large" formControlName="password" placeholder="请输入密码" />
+                </nz-input-group>
+              </nz-form-control>
+            </nz-form-item>
+            <button nz-button class="login-form-button" [nzType]="'primary'">登录</button>
+            <p class="others">
+              <a>
+                <img src="assets/images/login/other_icon1.png" alt="icon1">
+                <span>相政通</span>
+              </a>
+              <a>
+                <img src="assets/images/login/other_icon2.png" alt="icon2">
+                <span>苏周到</span>
+              </a>
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div nz-col nzMd="0" nzLg="1" nzXl="2" nzXXl="3"></div>
+  </div>
 
+  <div class="foot">
+    <p class="copy-right">{{copyRightText}}</p>
+  </div>
 </div>
