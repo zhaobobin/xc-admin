@@ -11,11 +11,11 @@
   <div class="layout-main">
     <div class="menu-wrapper">
       <div class="userinfo">
-        <a class="userinfo" nz-dropdown [nzDropdownMenu]="menu">
+        <a nz-dropdown [nzDropdownMenu]="menu">
           <p><img src="assets/images/account.png" alt="account"></p>
-          <p>
-            <span class="username">王尚明</span>
-            <i nz-icon nzType="down"></i>
+          <p class="username">
+            <span>王尚明</span>
+            <i nz-icon nzType="caret-down" nzTheme="fill"></i>
           </p>
         </a>
         <nz-dropdown-menu #menu="nzDropdownMenu">
