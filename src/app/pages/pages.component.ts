@@ -3,8 +3,8 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'ngx-pages',
-  styleUrls: ['pages.component2.less'],
-  templateUrl: './pages.component2.html',
+  styleUrls: ['pages.component.less'],
+  templateUrl: './pages.component.html',
 })
 export class PagesComponent {
 
@@ -12,30 +12,32 @@ export class PagesComponent {
 
   searchValue?: string;
 
+  currentMenuName: string = '工作台';
+
   menus = [
     {
       name: '工作台',
-      icon: 'assets/images/menu_icon01.png',
+      icon: 'assets/images/menu_icon01.svg',
       path: '/pages/workbench',
     },
     {
       name: '用户管理',
-      icon: 'assets/images/menu_icon02.png',
+      icon: 'assets/images/menu_icon02.svg',
       path: '/pages/user',
     },
     {
       name: '单位管理',
-      icon: 'assets/images/menu_icon03.png',
+      icon: 'assets/images/menu_icon03.svg',
       path: '/pages/company',
     },
     {
       name: '科室管理',
-      icon: 'assets/images/menu_icon04.png',
+      icon: 'assets/images/menu_icon04.svg',
       path: '/pages/department',
     },
     {
       name: '应用管理',
-      icon: 'assets/images/menu_icon05.png',
+      icon: 'assets/images/menu_icon05.svg',
       path: '/pages/application',
     },
   ];
@@ -76,5 +78,9 @@ export class PagesComponent {
 
   logout() {
     this.router.navigate(['/login']);
+  }
+
+  handleClickMenu(currentMenuName: string) {
+    this.currentMenuName = currentMenuName;
   }
 }

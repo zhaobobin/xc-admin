@@ -58,8 +58,8 @@
       align-items: center;
       justify-content: center;
       overflow: hidden;
-      background: url('../../../assets/images/login/login_left_bg.png') no-repeat 20% 55%;
-      background-size: 45% auto;
+      // background: url('../../../assets/images/login/login_left_bg.png') no-repeat 20% 55%;
+      // background-size: 45% auto;
 
       .left {
         display: flex;
@@ -71,9 +71,27 @@
         background: url('../../../assets/images/login/ring_bg.png') no-repeat center center;
         background-size: 85% auto;
 
+        .cloud {
+          display: flex;
+          width: 100%;
+          height: 100%;
+          align-items: center;
+          justify-content: center;
+          position: absolute;
+          left: 0;
+          top: 0;
+          z-index: 0;
+          animation: anmiteCloud 1.5s cubic-bezier(0.6, 0.3, 0.3, 0.6) 0s infinite alternate;
+          img {
+            width: 60%;
+            height: auto;
+          }
+        }
+
         .ball {
           text-align: center;
           position: absolute;
+          z-index: 1;
 
           img {
             width: 65px;
@@ -95,59 +113,65 @@
 
         /* 8个球 总共运行一圈的时间为32秒  每个球的间隔时间为 4秒*/
         // http://www.wjhsh.net/lin494910940-p-14051631.html
-        // @num: 8;
-        // @runtime: 32;
-        // @xtime: calc(runtime/4);  // 8
-        // @ytime: calc(runtime/num); // 4
-        // -`+(8+(i*4))+`s
+        @num: 8;
+        @runtime: 16;
+        @xtime: calc(@runtime/4);  // 4
+        @ytime: calc(@runtime/@num); // 2
+        // -`+(xtime+(i*ytime))+`s
         // -`+(i*_ytime)+`s
 
+        // .get-animation(@i) {
+        //   animation: anmiteX calc(@runtime/2)s cubic-bezier(0.6, 0.3, 0.3, 0.6) calc(~"-@{xtime}+(@{i}*@{ytime})")s infinite alternate,
+        //     anmiteY calc(@runtime/2)s cubic-bezier(0.6, 0.3, 0.3, 0.6) calc(~"-@{i}*@{ytime}")s infinite alternate,
+        //     scale ~"@{runtime}s" cubic-bezier(0.6, 0.3, 0.3, 0.6) calc(~"-@{i}*@{ytime}")s infinite alternate;
+        // }
+
         .ball1 {
-          animation: anmiteX 16s cubic-bezier(0.6, 0.3, 0.3, 0.6) -8s infinite alternate,
-            anmiteY 16s cubic-bezier(0.6, 0.3, 0.3, 0.6) 0s infinite alternate,
-            scale 32s cubic-bezier(0.6, 0.3, 0.3, 0.6) 0s infinite alternate;
+          animation: anmiteX 8s cubic-bezier(0.6, 0.3, 0.3, 0.6) -4s infinite alternate,
+            anmiteY 8s cubic-bezier(0.6, 0.3, 0.3, 0.6) 0s infinite alternate,
+            scale 16s cubic-bezier(0.6, 0.3, 0.3, 0.6) 0s infinite alternate;
         }
 
         .ball2 {
-          animation: anmiteX 16s cubic-bezier(0.6, 0.3, 0.3, 0.6) -12s infinite alternate,
-            anmiteY 16s cubic-bezier(0.6, 0.3, 0.3, 0.6) -4s infinite alternate,
-            scale 32s cubic-bezier(0.6, 0.3, 0.3, 0.6) -4s infinite alternate;
+          animation: anmiteX 8s cubic-bezier(0.6, 0.3, 0.3, 0.6) -6s infinite alternate,
+            anmiteY 8s cubic-bezier(0.6, 0.3, 0.3, 0.6) -2s infinite alternate,
+            scale 16s cubic-bezier(0.6, 0.3, 0.3, 0.6) -2s infinite alternate;
         }
 
         .ball3 {
-          animation: anmiteX 16s cubic-bezier(0.6, 0.3, 0.3, 0.6) -16s infinite alternate,
-            anmiteY 16s cubic-bezier(0.6, 0.3, 0.3, 0.6) -8s infinite alternate,
-            scale 32s cubic-bezier(0.6, 0.3, 0.3, 0.6) -8s infinite alternate;
+          animation: anmiteX 8s cubic-bezier(0.6, 0.3, 0.3, 0.6) -8s infinite alternate,
+            anmiteY 8s cubic-bezier(0.6, 0.3, 0.3, 0.6) -4s infinite alternate,
+            scale 16s cubic-bezier(0.6, 0.3, 0.3, 0.6) -4s infinite alternate;
         }
 
         .ball4 {
-          animation: anmiteX 16s cubic-bezier(0.6, 0.3, 0.3, 0.6) -20s infinite alternate,
-            anmiteY 16s cubic-bezier(0.6, 0.3, 0.3, 0.6) -12s infinite alternate,
-            scale 32s cubic-bezier(0.6, 0.3, 0.3, 0.6) -12s infinite alternate;
+          animation: anmiteX 8s cubic-bezier(0.6, 0.3, 0.3, 0.6) -10s infinite alternate,
+            anmiteY 8s cubic-bezier(0.6, 0.3, 0.3, 0.6) -6s infinite alternate,
+            scale 16s cubic-bezier(0.6, 0.3, 0.3, 0.6) -6s infinite alternate;
         }
 
         .ball5 {
-          animation: anmiteX 16s cubic-bezier(0.6, 0.3, 0.3, 0.6) -24s infinite alternate,
-            anmiteY 16s cubic-bezier(0.6, 0.3, 0.3, 0.6) -16s infinite alternate,
-            scale 32s cubic-bezier(0.6, 0.3, 0.3, 0.6) -16s infinite alternate;
+          animation: anmiteX 8s cubic-bezier(0.6, 0.3, 0.3, 0.6) -12s infinite alternate,
+            anmiteY 8s cubic-bezier(0.6, 0.3, 0.3, 0.6) -8s infinite alternate,
+            scale 16s cubic-bezier(0.6, 0.3, 0.3, 0.6) -8s infinite alternate;
         }
 
         .ball6 {
-          animation: anmiteX 16s cubic-bezier(0.6, 0.3, 0.3, 0.6) -28s infinite alternate,
-            anmiteY 16s cubic-bezier(0.6, 0.3, 0.3, 0.6) -20s infinite alternate,
-            scale 32s cubic-bezier(0.6, 0.3, 0.3, 0.6) -20s infinite alternate;
+          animation: anmiteX 8s cubic-bezier(0.6, 0.3, 0.3, 0.6) -14s infinite alternate,
+            anmiteY 8s cubic-bezier(0.6, 0.3, 0.3, 0.6) -10s infinite alternate,
+            scale 16s cubic-bezier(0.6, 0.3, 0.3, 0.6) -10s infinite alternate;
         }
 
         .ball7 {
-          animation: anmiteX 16s cubic-bezier(0.6, 0.3, 0.3, 0.6) -32s infinite alternate,
-            anmiteY 16s cubic-bezier(0.6, 0.3, 0.3, 0.6) -24s infinite alternate,
-            scale 32s cubic-bezier(0.6, 0.3, 0.3, 0.6) -24s infinite alternate;
+          animation: anmiteX 8s cubic-bezier(0.6, 0.3, 0.3, 0.6) -16s infinite alternate,
+            anmiteY 8s cubic-bezier(0.6, 0.3, 0.3, 0.6) -12s infinite alternate,
+            scale 16s cubic-bezier(0.6, 0.3, 0.3, 0.6) -12s infinite alternate;
         }
 
         .ball8 {
-          animation: anmiteX 16s cubic-bezier(0.6, 0.3, 0.3, 0.6) -36s infinite alternate,
-            anmiteY 16s cubic-bezier(0.6, 0.3, 0.3, 0.6) -28s infinite alternate,
-            scale 32s cubic-bezier(0.6, 0.3, 0.3, 0.6) -28s infinite alternate;
+          animation: anmiteX 8s cubic-bezier(0.6, 0.3, 0.3, 0.6) -18s infinite alternate,
+            anmiteY 8s cubic-bezier(0.6, 0.3, 0.3, 0.6) -14s infinite alternate,
+            scale 16s cubic-bezier(0.6, 0.3, 0.3, 0.6) -14s infinite alternate;
         }
 
         /* 动画 */
@@ -158,18 +182,28 @@
           }
 
           to {
-            left: 88%;
+            left: 85%;
           }
         }
 
         /* 在轴上Y的移动 */
         @keyframes anmiteY {
           from {
-            top: 25%;
+            top: 22%;
           }
 
           to {
-            top: 65%;
+            top: 68%;
+          }
+        }
+
+        @keyframes anmiteCloud {
+          from {
+            top: 0;
+          }
+
+          to {
+            top: 5%;
           }
         }
 
@@ -180,7 +214,7 @@
           }
 
           50% {
-            transform: scale(1.2, 1.2);
+            transform: scale(1.5, 1.5);
           }
 
           100% {

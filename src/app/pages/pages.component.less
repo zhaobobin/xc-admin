@@ -8,12 +8,41 @@
   top: 0;
   z-index: 999;
 }
-.layout-content {
-  padding: 9rem 1rem 4.2rem 1rem;
+.layout-main {
+  padding-top: 4rem;
   height: 100%;
-  background-color: #F8F8F8;
-  overflow: auto;
+  background: #F4F4F7;
+  overflow: hidden;
+
+  .menu-wrapper {
+    float: left;
+    width: 220px;
+    height: 100%;
+    background: #fff;
+    box-shadow: 0px 3px 10px 0px rgba(145, 145, 145, 0.35);
+  }
+  .layout-content {
+    display: flex;
+    height: 100%;
+    margin-left: 220px;
+    flex-direction: column;
+    
+    .quick-nav {
+      display: flex;
+      height: 6rem;
+      flex-direction: column;
+      box-shadow: 0rem 0rem 1rem 0rem rgba(145, 145, 145, 0.21);
+    }
+    .router-wrapper {
+      display: flex;
+      flex: 1;
+      justify-content: center;
+      padding-top: 1.8rem;
+      overflow-y: auto;
+    }
+  }
 }
+
 
 .header-top {
   display: flex;
@@ -21,80 +50,55 @@
   justify-content: space-between;
   height: 4rem;
   padding: 0 2rem;
-  background-color: #319BFD;
+  background: linear-gradient(90deg, #2F5FFF, #449FFE);
 
   .logo img {
     width: auto;
     height: 3rem;
   }
+}
 
-  .action {
-    display: flex;
-    align-items: center;
-    height: 100%;
+.userinfo {
+  height: 200px;
+  text-align: center;
+  padding: 2rem;
+  img {
+    width: auto;
+    height: 5.4rem;
   }
-  .search {
-    display: flex;
-    height: 2rem;
-    margin-right: 2rem;
-    .ant-input-affix-wrapper {
-      border-radius: 1.29rem;
-      background-color: rgba(255,255,255,.5);
-      border: none;
-      color: #fff;
-      .ant-input {
-        background: none;
-        color: #fff;
-        &::placeholder {
-          color: #fff;
-        }
-      }
-    }
+  .username {
+    color: #333;
   }
-  .userinfo {
-    display: flex;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
-    img {
-      width: auto;
-      height: 2.5rem;
-    }
-    .username {
-      margin-left: .5rem;
-      color: #fff;
-    }
-    .anticon-down {
-      margin-left: 0.7rem;
-      color: #fff;
-    }
+  .anticon-down {
+    margin-left: 0.5rem;
+    color: #333;
   }
 }
 
 .nav-menu {
-  display: flex;
-  align-items: center;
-  height: 4rem;
-  padding: 0 2rem;
+  padding: 0 .4rem;
   background-color: #fff;
-  box-shadow: 0rem 0rem 1rem 0rem rgba(205, 205, 205, 0.38);
-  nav {
-    display: flex;
-    height: 100%;
-  }
+  // box-shadow: 0rem 0rem 1rem 0rem rgba(205, 205, 205, 0.38);
+  // nav {
+  //   display: flex;
+  //   height: 100%;
+  // }
   a {
-    display: flex;
+    display: block;
     align-items: center;
-    height: 100%;
-    margin: 0 1.5rem;
-    padding: 0 .5rem;
-    text-decoration: none;
-    color: #333;
+    height: 3rem;
+    line-height: 3rem;
+    margin-bottom: .8rem;
+    border-radius: 0.43rem;
+    color: #3C88FE;
     position: relative;
     .icon {
-      margin-right: 0.5rem;
+      margin-left: 2.8rem;
+      margin-right: 2.5rem;
       width: auto;
       height: 1.2rem;
+      color: #3C88FE;
+      opacity: .5;
     }
     i {
       display: block;
@@ -106,15 +110,62 @@
       left: 0;
       bottom: 0;
     }
-    &.active i {
-      opacity: 1;
+    &.active {
+      color: #fff;
+      background: linear-gradient(90deg, #2F5FFF, #449FFE);
+      .icon {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.quick-nav {
+  .top {
+    display: flex;
+    padding: .3rem 1.86rem 0;
+    height: 2.3rem;
+    background: #EBEBEB;
+    span {
+      display: inline-block;
+      width: 7.21rem;
+      height: 2rem;
+      line-height: 2rem;
+      text-align: center;
+      background: #FFF;
+      border-radius: 0.43rem 0.43rem 0 0;
+    }
+  }
+  .action {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 3.7rem;
+    padding: 0 1.7rem;
+    background: #fff;
+  }
+  .search {
+    display: flex;
+    height: 2rem;
+    .ant-input-affix-wrapper {
+      border-radius: 1.29rem;
+      background-color: rgba(255,255,255,.5);
+      border-color: #DEDEDE;;
+      color: #AFAFAF;
+      .ant-input {
+        background: none;
+        color: #AFAFAF;
+        &::placeholder {
+          color: #AFAFAF;
+        }
+      }
     }
   }
 }
 
 .table-container {
   min-height: 800px;
-  padding: 1rem 1rem 0;
+  padding: 1rem 1rem 3rem;
   border-radius: 0.57rem;
   background-color: #fff;
 

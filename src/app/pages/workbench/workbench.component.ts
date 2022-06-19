@@ -15,67 +15,133 @@ export class WorkbenchComponent {
     welcomeText2: '请开启一天的工作吧！',
   }
 
-  appList = [
+  myList = [
     {
       name: '政务OA',
+      subTitle: '信息中心',
       host: '政务网',
-      icon: 'assets/images/app_icon_1.png'
+      icon: 'assets/images/workbench/app_icon_1.png'
     },
     {
       name: '产业项目监管平台',
+      subTitle: '信息中心',
       host: '政务网',
-      icon: 'assets/images/app_icon_2.png'
+      icon: 'assets/images/workbench/app_icon_2.png'
     },
     {
-      name: '政务OA',
+      name: '流调系统',
+      subTitle: '信息中心',
       host: '政务网',
-      icon: 'assets/images/app_icon_3.png'
-    },
-    {
-      name: '产业项目监管平台',
-      host: '政务网',
-      icon: ''
-    },
-    {
-      name: '政务OA',
-      host: '政务网',
-      icon: 'assets/images/app_icon_3.png'
+      icon: 'assets/images/workbench/app_icon_3.png'
     },
     {
       name: '产业项目监管平台',
+      subTitle: '信息中心',
       host: '政务网',
-      icon: ''
+      icon: 'assets/images/workbench/app_icon_4.png'
+    },
+    {
+      name: '流调系统',
+      subTitle: '信息中心',
+      host: '政务网',
+      icon: 'assets/images/workbench/app_icon_5.png'
     },
 
     {
-      name: '政务OA',
+      name: '流调系统',
+      subTitle: '信息中心',
       host: '政务网',
       icon: ''
     },
     {
-      name: '相城区数据共享交换平台门户',
+      name: '统一门户',
+      subTitle: '信息中心',
       host: '政务网',
-      icon: 'assets/images/app_icon_3.png'
+      icon: 'assets/images/workbench/app_icon_4.png'
     },
     {
-      name: '政务OA',
+      name: '流调系统',
+      subTitle: '信息中心',
+      host: '政务网',
+      icon: 'assets/images/workbench/app_icon_6.png'
+    },
+    {
+      name: '统一门户',
+      subTitle: '信息中心',
       host: '政务网',
       icon: ''
+    },
+    {
+      name: '流调系统',
+      subTitle: '信息中心',
+      host: '政务网',
+      icon: 'assets/images/workbench/app_icon_3.png'
+    },
+  ];
+
+  othersList = [
+    {
+      name: '政务OA',
+      subTitle: '信息中心',
+      host: '政务网',
+      icon: 'assets/images/workbench/app_icon_1.png'
     },
     {
       name: '产业项目监管平台',
+      subTitle: '信息中心',
       host: '政务网',
-      icon: ''
+      icon: 'assets/images/workbench/app_icon_2.png'
     },
     {
-      name: '政务OA',
+      name: '流调系统',
+      subTitle: '信息中心',
       host: '政务网',
-      icon: 'assets/images/app_icon_2.png'
+      icon: 'assets/images/workbench/app_icon_3.png'
     },
     {
       name: '产业项目监管平台',
+      subTitle: '信息中心',
       host: '政务网',
-      icon: ''
+      icon: 'assets/images/workbench/app_icon_4.png'
+    },
+    {
+      name: '流调系统',
+      subTitle: '信息中心',
+      host: '政务网',
+      icon: 'assets/images/workbench/app_icon_5.png'
+    },
+  ];
+
+  directList = [
+    {
+      name: '政务OA',
+      subTitle: '信息中心',
+      host: '政务网',
+      icon: 'assets/images/workbench/app_icon_1.png'
+    },
+    {
+      name: '产业项目监管平台',
+      subTitle: '信息中心',
+      host: '政务网',
+      icon: 'assets/images/workbench/app_icon_2.png'
+    },
+    {
+      name: '流调系统',
+      subTitle: '信息中心',
+      host: '政务网',
+      icon: 'assets/images/workbench/app_icon_3.png'
+    },
+    {
+      name: '产业项目监管平台',
+      subTitle: '信息中心',
+      host: '政务网',
+      icon: 'assets/images/workbench/app_icon_4.png'
+    },
+    {
+      name: '流调系统',
+      subTitle: '信息中心',
+      host: '政务网',
+      icon: 'assets/images/workbench/app_icon_5.png'
     },
   ];
 
@@ -136,10 +202,10 @@ export class WorkbenchComponent {
     this.noticeList = arr;
   }
 
-  ngOnInit() {
+  // ngOnInit() {
     // this.initAppList();
-    this.initTodoList();
-    this.initNoticeList();
-  }
+    // this.initTodoList();
+    // this.initNoticeList();
+  // }
   
 }

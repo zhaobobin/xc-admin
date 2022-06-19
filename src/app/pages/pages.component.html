@@ -4,16 +4,19 @@
       <div class="logo">
         <img src="assets/images/logo.png" alt="logo">
       </div>
-      <div class="action">
-        <div class="search">
-          <nz-input-group nzPrefixIcon="search">
-            <input nz-input placeholder="请搜索" [(ngModel)]="searchValue" (change)="search()" />
-          </nz-input-group>
-        </div>
+    </div>
+    
+  </div>
+  
+  <div class="layout-main">
+    <div class="menu-wrapper">
+      <div class="userinfo">
         <a class="userinfo" nz-dropdown [nzDropdownMenu]="menu">
-          <img src="assets/images/account.png" alt="account">
-          <span class="username">欢迎您，楼雪峰123</span>
-          <i nz-icon nzType="down"></i>
+          <p><img src="assets/images/account.png" alt="account"></p>
+          <p>
+            <span class="username">王尚明</span>
+            <i nz-icon nzType="down"></i>
+          </p>
         </a>
         <nz-dropdown-menu #menu="nzDropdownMenu">
           <ul nz-menu>
@@ -21,22 +24,37 @@
           </ul>
         </nz-dropdown-menu>
       </div>
+      <div class="nav-menu">
+        <nav>
+          <a 
+            *ngFor="let item of menus2"
+            [routerLink]="item.path" 
+            routerLinkActive="active"
+            (click)="handleClickMenu(item.name)"
+          >
+            <img [src]="item.icon" alt="icon" class="icon">
+            <span>{{ item.name }}</span>
+            <i></i>
+          </a>
+        </nav>
+      </div>
     </div>
-    <div class="nav-menu">
-      <nav>
-        <a 
-          *ngFor="let item of menus"
-          [routerLink]="item.path" 
-          routerLinkActive="active"
-        >
-          <img [src]="item.icon" alt="icon" class="icon">
-          <span>{{ item.name }}</span>
-          <i></i>
-        </a>
-      </nav>
+    <div class="layout-content">
+      <div class="quick-nav">
+        <div class="top">
+          <span>{{ currentMenuName }}</span>
+        </div>
+        <div class="action">
+          <div class="search">
+            <nz-input-group nzPrefixIcon="search">
+              <input nz-input placeholder="请搜索" [(ngModel)]="searchValue" (change)="search()" />
+            </nz-input-group>
+          </div>
+        </div>
+      </div>
+      <div class="router-wrapper">
+        <router-outlet></router-outlet>
+      </div>
     </div>
-  </div>
-  <div class="layout-content">
-    <router-outlet></router-outlet>
   </div>
 </div>

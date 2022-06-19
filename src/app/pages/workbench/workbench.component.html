@@ -1,89 +1,91 @@
-<div nz-row>
+<div nz-row class="user-manage">
   <div nz-col nzMd="0" nzLg="1" nzXl="2" nzXXl="3"></div>
   <div nz-col nzMd="24" nzLg="22" nzXl="20" nzXXl="18">
     <div class="workbench">
-      <div nz-row [nzGutter]="15">
-        <div nz-col nzSpan="15">
-          <div class="section basic-info">
-            <img [src]="basicInfo.headUrl" alt="account" />
-            <div class="info-text">
-              <p class="date">{{ basicInfo.dateText }}</p>
-              <p class="welcome">
-                <span>{{ basicInfo.welcomeText1 }}</span>
-                <br />
-                <span>{{ basicInfo.welcomeText2 }}</span>
-              </p>
-            </div>
-          </div>
-
-          <div class="section app-list">
-            <div class="header">
-              <h2>应用列表</h2>
-              <a routerLink="/pages" class="more">全部应用>></a>
-            </div>
-            <div class="list">
-              <div nz-row [nzGutter]="20">
-                <div nz-col nzSpan="8" *ngFor="let item of appList">
-                  <a class="app-item">
-                    <span class="icon">
-                      <img *ngIf="item.icon" [src]="item.icon" alt="icon" />
-                      <img *ngIf="!item.icon" src="assets/images/app_icon_default.png" alt="icon" />
-                    </span>
-                    <div class="info">
-                      <p class="name">{{ item.name }}</p>
-                      <p class="host"><span>{{ item.host }}</span></p>
-                    </div>
-                  </a>
-                </div>
+      <div class="section basic-info">
+        <img src="assets/images/workbench/my_bg.png" alt="bg" class="bg">
+        <h2>欢迎回来，迎接新的挑战！</h2>
+        <div class="info">
+          <ul>
+            <li>
+              <span class="icon">
+                <img src="assets/images/workbench/notice_icon.png" alt="notice">
+                <i></i>
+              </span>
+              <span class="name">我的消息</span>
+              <img src="assets/images/workbench/arrow.png" alt="arrow" class="arrow">
+            </li>
+            <li>
+              <span class="icon">
+                <img src="assets/images/workbench/todo_icon.png" alt="todo">
+                <i></i>
+              </span>
+              <span class="name">我的待办</span>
+              <img src="assets/images/workbench/arrow.png" alt="arrow" class="arrow">
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="section my">
+        <div class="header">
+          <h2>我的</h2>
+          <i></i>
+        </div>
+        <div class="list">
+          <div class="item-wrapper" *ngFor="let item of myList">
+            <a class="item">
+              <span class="icon">
+                <img *ngIf="item.icon" [src]="item.icon" alt="icon" />
+                <img *ngIf="!item.icon" src="assets/images/app_icon_default.png" alt="icon" />
+              </span>
+              <div class="info">
+                <p class="name">{{ item.name }}</p>
+                <p class="subTitle">{{ item.subTitle }}</p>
+                <p class="host"><span>{{ item.host }}</span></p>
               </div>
-            </div>
+            </a>
           </div>
         </div>
-        <div nz-col nzSpan="9">
-          <div class="section todo-list">
-            <div class="header">
-              <h2>待办事项</h2>
-              <a routerLink="/pages" class="more">全部待办>></a>
-            </div>
-            <div class="list">
-              <div
-                class="todo-item"
-                *ngFor="let item of todoList"
-              >
-                <div class="icon">
-                  <img src="assets/images/todo_icon.png" alt="icon" />
-                </div>
-                <div class="text">
-                  <p class="title">{{ item.title }}</p>
-                  <p class="desc">{{ item.desc }}</p>
-                </div>
-                <a class="action">去处理</a>
+      </div>
+      <div class="section others">
+        <div class="header">
+          <h2>其他应用</h2>
+          <i></i>
+        </div>
+        <div class="list">
+          <div class="item-wrapper" *ngFor="let item of othersList">
+            <a class="item">
+              <span class="icon">
+                <img *ngIf="item.icon" [src]="item.icon" alt="icon" />
+                <img *ngIf="!item.icon" src="assets/images/app_icon_default.png" alt="icon" />
+              </span>
+              <div class="info">
+                <p class="name">{{ item.name }}</p>
+                <p class="subTitle">{{ item.subTitle }}</p>
+                <p class="host"><span>{{ item.host }}</span></p>
               </div>
-            </div>
+            </a>
           </div>
-
-          <div class="section notice-list">
-            <div class="header">
-              <h2>通知消息</h2>
-              <a routerLink="/pages" class="more">全部消息>></a>
-            </div>
-            <div class="list">
-              <div
-                class="notice-item"
-                *ngFor="let item of noticeList"
-              >
-                <div class="icon">
-                  <img src="assets/images/notice_icon.png" alt="icon" />
-                </div>
-                <div class="text">
-                  <p class="title">
-                    <span>{{ item.title }}</span>
-                    <span *ngIf="item.new" class="new">NEW</span>
-                  </p>
-                </div>
-                <span class="time">{{ item.time }}</span>
+        </div>
+      </div>
+      <div class="section direct">
+        <div class="header">
+          <h2>一键直达</h2>
+          <i></i>
+        </div>
+        <div class="list">
+          <div class="item-wrapper" *ngFor="let item of directList">
+            <a class="item">
+              <span class="icon">
+                <img *ngIf="item.icon" [src]="item.icon" alt="icon" />
+                <img *ngIf="!item.icon" src="assets/images/app_icon_default.png" alt="icon" />
+              </span>
+              <div class="info">
+                <p class="name">{{ item.name }}</p>
+                <p class="subTitle">{{ item.subTitle }}</p>
+                <p class="host"><span>{{ item.host }}</span></p>
               </div>
-            </div>
+            </a>
           </div>
         </div>
       </div>
