@@ -12,7 +12,6 @@
   padding-top: 4rem;
   height: 100%;
   background: #F4F4F7;
-  overflow: hidden;
 
   .menu-wrapper {
     float: left;
@@ -29,7 +28,6 @@
     
     .quick-nav {
       display: flex;
-      height: 6rem;
       flex-direction: column;
       box-shadow: 0rem 0rem 1rem 0rem rgba(145, 145, 145, 0.21);
     }
@@ -55,6 +53,39 @@
   .logo img {
     width: auto;
     height: 3rem;
+  }
+
+  .action {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100%;
+    padding: 0 1.7rem;
+  }
+  .search {
+    display: flex;
+    width: 16rem;
+    height: 2.3rem;
+    .ant-input-affix-wrapper {
+      border-radius: 1.29rem;
+      background: none;
+      border-color: #fff;;
+      color: #fff;
+      .ant-input {
+        background: none;
+        &::placeholder {
+          color: #fff;
+        }
+      }
+      &.cdk-focused {
+        background: #fff;
+        border-color: #DEDEDE;;
+        color: #AFAFAF;
+        .ant-input::placeholder {
+          color: #AFAFAF;
+        }
+      }
+    }
   }
 }
 
@@ -100,12 +131,15 @@
     color: #3C88FE;
     position: relative;
     .icon {
+      display: inline-block;
       margin-left: 2.8rem;
       margin-right: 2.5rem;
-      width: auto;
-      height: 1.2rem;
-      color: #3C88FE;
-      opacity: .5;
+      width: 2rem;
+      text-align: center;
+      img {
+        width: auto;
+        height: 1.2rem;
+      }
     }
     i {
       display: block;
@@ -120,9 +154,6 @@
     &.active {
       color: #fff;
       background: linear-gradient(90deg, #2F5FFF, #449FFE);
-      .icon {
-        opacity: 1;
-      }
     }
   }
 }
@@ -130,42 +161,18 @@
 .quick-nav {
   .top {
     display: flex;
-    padding: .3rem 1.86rem 0;
-    height: 2.3rem;
+    padding: .3rem 1.63rem 0;
+    height: 2rem;
     background: #EBEBEB;
     span {
       display: inline-block;
       width: 7.21rem;
       height: 2rem;
       line-height: 2rem;
+      font-size: 0.88rem;
       text-align: center;
       background: #FFF;
       border-radius: 0.43rem 0.43rem 0 0;
-    }
-  }
-  .action {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    height: 3.7rem;
-    padding: 0 1.7rem;
-    background: #fff;
-  }
-  .search {
-    display: flex;
-    height: 2rem;
-    .ant-input-affix-wrapper {
-      border-radius: 1.29rem;
-      background-color: rgba(255,255,255,.5);
-      border-color: #DEDEDE;;
-      color: #AFAFAF;
-      .ant-input {
-        background: none;
-        color: #AFAFAF;
-        &::placeholder {
-          color: #AFAFAF;
-        }
-      }
     }
   }
 }

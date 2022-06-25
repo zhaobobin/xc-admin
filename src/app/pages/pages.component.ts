@@ -45,27 +45,32 @@ export class PagesComponent {
   menus2 = [
     {
       name: '工作台',
-      icon: 'assets/images/menu_icon12.png',
+      icon: 'assets/images/menu_icon11.png',
+      active: 'assets/images/menu_icon12.png',
       path: '/pages/workbench',
     },
     {
       name: '用户管理',
-      icon: 'assets/images/menu_icon22.png',
+      icon: 'assets/images/menu_icon21.png',
+      active: 'assets/images/menu_icon22.png',
       path: '/pages/user',
     },
     {
       name: '单位管理',
-      icon: 'assets/images/menu_icon32.png',
+      icon: 'assets/images/menu_icon31.png',
+      active: 'assets/images/menu_icon32.png',
       path: '/pages/company',
     },
     {
       name: '科室管理',
-      icon: 'assets/images/menu_icon42.png',
+      icon: 'assets/images/menu_icon41.png',
+      active: 'assets/images/menu_icon42.png',
       path: '/pages/department',
     },
     {
       name: '应用管理',
-      icon: 'assets/images/menu_icon52.png',
+      icon: 'assets/images/menu_icon51.png',
+      active: 'assets/images/menu_icon52.png',
       path: '/pages/application',
     },
   ];

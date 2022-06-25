@@ -2,54 +2,53 @@
   padding-bottom: 3rem;
 
   .section {
-    margin-bottom: 1rem;
-    padding: 1rem 1.3rem;
+    margin-bottom: 1.06rem;
     background: #FFFFFF;
-    border: 0px solid #E6E6E6;
-    border-radius: 0.86rem;
+    border: 1px solid #E6E6E6;
+    border-radius: 0.75rem;
+    overflow: hidden;
 
     .header {
+      background: #ecf3fe;
       position: relative;
       h2 {
-        padding: 0 1rem;
-        font-size: 1.14rem;
-        font-weight: 500;
-        color: #333333;
-      }
-      i {
-        display: block;
-        width: 5px;
-        height: 16px;
-        background: #3D9AFE;
-        position: absolute;
-        left: 0; 
-        top: 50%;
-        margin-top: -8px;
+        display: inline-block;
+        width: 7.25rem;
+        height: 2.63rem;
+        line-height: 2.63rem;
+        font-size: 1rem;
+        text-align: center;
+        &.active {
+          color: #fff;
+          background: #3C88FE;
+          font-weight: 600;
+        }
       }
       .more {
-        color: #999999;
-        font-size: 1rem;
-        &:hover {
-          text-decoration: underline;
-        }
+        font-size: 0.75rem;
+        color: #3C88FE;
+        line-height: 1.4rem;
+        position: absolute;
+        right: 1.2rem;
+        top: 50%;
+        margin-top: -0.7rem;
       }
     }
 
     .list {
+      padding: 1.1rem 1.3rem;
       overflow: hidden;
     }
 
     .item-wrapper {
       float: left;
-      width: 20%;
+      width: 25%;
       height: 8rem;
-      margin-bottom: 1rem;
     }
     .item {
       display: flex;
       height: 100%;
-      margin-bottom: .7rem;
-      padding: 1.66rem .5rem;
+      padding: 1.8rem .5rem;
       .icon {
         display: flex;
         margin-right: 1rem;
@@ -64,13 +63,13 @@
         flex-direction: column;
       }
       .name {
-        font-size: 1rem;
+        font-size: 0.88rem;
         font-weight: 500;
         color: #333333;
         margin-bottom: 0.2rem;
       }
       .subTitle {
-        font-size: 0.86rem;
+        font-size: 0.75rem;
         color: #999999;
         line-height: 1.57rem;
         margin-bottom: 0.5rem;
@@ -81,73 +80,173 @@
           padding: 0.14rem 0.36rem;
           background: #FFFFFF;
           border: 1px solid #44CD99;
-          font-size: 0.86rem;
+          font-size: 0.75rem;
           color: #44CD99;
         }
       }
     }
   }
 
-  .basic-info {
-    position: relative;
-    .bg {
-      width: 80%;
-      height: auto;
+  .news-list {
+    .list {
+      padding: 0;
     }
-    h2 {
-      position: absolute;
-      left: 118px;
-      top: 45%;
-      font-size: 1.5rem;
-      font-weight: 400;
-      color: #FFFFFF;
-    }
-    .info {
-      width: 20%;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      right: 0;
-      ul {
+    .news-item {
+      display: flex;
+      padding: 1rem 1.5rem;
+      align-items: center;
+      justify-content: space-between;
+      &:nth-child(2n) {
+        background: #F9F9FC;
+      }
+      .icon {
         display: flex;
-        height: 100%;
+        width: 1rem;
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+      .text {
+        display: flex;
+        flex: 1;
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding: 0;
-        margin: 0;
-        li {
-          padding: 1.5rem 0;
-          .icon {
-            margin-right: 1rem;
+        p {
+          margin: 0;
+          padding: 0 0.86rem;
+        }
+        .title {
+          font-size: 0.88rem;
+          font-weight: 400;
+          color: #333333;
+          .title-text {
+            margin-right: 5px;
+          }
+          .hot {
+            width: auto;
+            height: 1rem;
             position: relative;
-            img {
-              width: auto;
-              height: 2.5rem;
-            }
-            i {
-              display: block;
-              width: .8rem;
-              height: .8rem;
-              background: #EE3838;
-              border: 1px solid #FFFFFF;
-              border-radius: 50%;
-              position: absolute;
-              top: -1rem;
-              right: -0.4rem;
-            }
+            top: -1px;
           }
-          .name {
-            margin-right: .5rem;
-            font-size: 1rem;
-            font-weight: 500;
-            color: #333333;
+          .new {
+            padding: 1px 3px;
+            font-size: 0.7rem;
+            color: #fff;
+            background: #FA8411;
+            border-radius: 0.14rem;
+            position: relative;
+            top: -1px;
           }
-          .arrow {
-            width: 1rem;
-            height: auto;
+        }
+      }
+      .date {
+        font-size: 0.75rem;
+        color: #AFAFAF;
+        line-height: 1.38rem;
+      }
+    }
+  }
+
+  .notice-list {
+    h2 {
+      cursor: pointer;
+      font-weight: 400;
+      color: #333;
+      background: none;
+    }
+    .list {
+      padding: 0;
+    }
+    .notice-item {
+      display: flex;
+      padding: 1rem 1.5rem;
+      align-items: center;
+      &:nth-child(2n) {
+        background: #F9F9FC;
+      }
+      .icon {
+        display: flex;
+        width: 1.29rem;
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+      .text {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        p {
+          margin: 0;
+          padding: 0 0.86rem;
+        }
+        .title {
+          font-size: 0.88rem;
+          color: #333;
+          .title-text {
+            margin-right: 5px;
           }
-          
+          .new {
+            display: inline-block;
+            height: 20px;
+            line-height: 18px;
+            padding: 0 5px;
+            font-size: 0.7rem;
+            color: #F00A0A;
+            border: 1px solid #F57B7B;
+            border-radius: 0.14rem;
+          }
+        }
+      }
+      .time {
+        font-size: 0.75rem;
+        color: #AFAFAF;
+      }
+    }
+
+    .todo-item {
+      display: flex;
+      padding: 1rem 1.5rem;
+      align-items: center;
+      &:nth-child(2n) {
+        background: #F9F9FC;
+      }
+      .icon {
+        display: flex;
+        width: 1.29rem;
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+      .text {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        p {
+          margin: 0;
+          padding: 0 0.86rem;
+        }
+        .title {
+          font-size: 0.88rem;
+          color: #333333;
+        }
+        .desc {
+          font-size: 0.75rem;
+          color: #999;
+        }
+      }
+      .action {
+        a {
+          display: block;
+          width: 3.75rem;
+          height: 1.5rem;
+          line-height: 1.5rem;
+          font-size: 0.75rem;
+          text-align: center;
+          color: #fff;
+          background: #3C88FE;
+          border-radius: 0.75rem;
         }
       }
     }

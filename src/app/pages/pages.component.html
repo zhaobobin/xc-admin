@@ -4,8 +4,14 @@
       <div class="logo">
         <img src="assets/images/workbench/logo.png" alt="logo">
       </div>
+      <div class="action">
+        <div class="search">
+          <nz-input-group nzPrefixIcon="search">
+            <input nz-input placeholder="请搜索" [(ngModel)]="searchValue" (change)="search()" />
+          </nz-input-group>
+        </div>
+      </div>
     </div>
-    
   </div>
   
   <div class="layout-main">
@@ -32,9 +38,10 @@
             routerLinkActive="active"
             (click)="handleClickMenu(item.name)"
           >
-            <img [src]="item.icon" alt="icon" class="icon">
+            <span class="icon">
+              <img [src]="currentMenuName === item.name ? item.active : item.icon" alt="active">
+            </span>
             <span>{{ item.name }}</span>
-            <i></i>
           </a>
         </nav>
       </div>
@@ -43,13 +50,6 @@
       <div class="quick-nav">
         <div class="top">
           <span>{{ currentMenuName }}</span>
-        </div>
-        <div class="action">
-          <div class="search">
-            <nz-input-group nzPrefixIcon="search">
-              <input nz-input placeholder="请搜索" [(ngModel)]="searchValue" (change)="search()" />
-            </nz-input-group>
-          </div>
         </div>
       </div>
       <div class="router-wrapper">
