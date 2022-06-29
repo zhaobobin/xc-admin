@@ -31,6 +31,11 @@ import { AuthSmsComponent } from './auth/sms/sms.component';
 
 import { PagesComponent } from './pages/pages.component';
 import { WorkbenchComponent } from './pages/workbench/workbench.component';
+import { MemberManageComponent } from './pages/members/member-manage.component';
+import { MessageManageComponent } from './pages/messages/message-manage.component';
+import { TodoManageComponent } from './pages/todo/todo-manage.component';
+import { SettingManageComponent } from './pages/setting/setting-manage.component';
+
 import { UserManageComponent } from './pages/user-manage/user-manage.component';
 import { CompanyManageComponent } from './pages/company-manage/company-manage.component';
 import { DepartmentManageComponent } from './pages/department-manage/department-manage.component';
@@ -46,8 +51,14 @@ registerLocaleData(en);
     AuthComponent,
     AuthPsdComponent,
     AuthSmsComponent,
+    
     PagesComponent,
     WorkbenchComponent,
+    MemberManageComponent,
+    MessageManageComponent,
+    TodoManageComponent,
+    SettingManageComponent,
+
     UserManageComponent,
     CompanyManageComponent,
     DepartmentManageComponent,

@@ -11,10 +11,15 @@ import { AuthScanComponent } from './auth/scan/scan.component';
 
 import { PagesComponent } from './pages/pages.component';
 import { WorkbenchComponent } from './pages/workbench/workbench.component';
-import { UserManageComponent } from './pages/user-manage/user-manage.component';
-import { CompanyManageComponent } from './pages/company-manage/company-manage.component';
-import { DepartmentManageComponent } from './pages/department-manage/department-manage.component';
-import { ApplicationManageComponent } from './pages/application-manage/application-manage.component';
+import { MemberManageComponent } from './pages/members/member-manage.component';
+import { MessageManageComponent } from './pages/messages/message-manage.component';
+import { SettingManageComponent } from './pages/setting/setting-manage.component';
+import { TodoManageComponent } from './pages/todo/todo-manage.component';
+
+// import { UserManageComponent } from './pages/user-manage/user-manage.component';
+// import { CompanyManageComponent } from './pages/company-manage/company-manage.component';
+// import { DepartmentManageComponent } from './pages/department-manage/department-manage.component';
+// import { ApplicationManageComponent } from './pages/application-manage/application-manage.component';
 
 export const routes: Routes = [
   {
@@ -57,21 +62,37 @@ export const routes: Routes = [
         component: WorkbenchComponent,
       },
       {
-        path: 'user',
-        component: UserManageComponent,
+        path: 'members',
+        component: MemberManageComponent,
       },
       {
-        path: 'company',
-        component: CompanyManageComponent,
+        path: 'messages',
+        component: MessageManageComponent,
       },
       {
-        path: 'department',
-        component: DepartmentManageComponent,
+        path: 'todo',
+        component: TodoManageComponent,
       },
       {
-        path: 'application',
-        component: ApplicationManageComponent,
+        path: 'setting',
+        component: SettingManageComponent,
       },
+      // {
+      //   path: 'user',
+      //   component: UserManageComponent,
+      // },
+      // {
+      //   path: 'company',
+      //   component: CompanyManageComponent,
+      // },
+      // {
+      //   path: 'department',
+      //   component: DepartmentManageComponent,
+      // },
+      // {
+      //   path: 'application',
+      //   component: ApplicationManageComponent,
+      // },
       {
         path: '',
         redirectTo: 'workbench',

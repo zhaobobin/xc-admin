@@ -33,7 +33,7 @@
       <div class="nav-menu">
         <nav>
           <a 
-            *ngFor="let item of menus2"
+            *ngFor="let item of menus"
             [routerLink]="item.path" 
             routerLinkActive="active"
             (click)="handleClickMenu(item.name)"

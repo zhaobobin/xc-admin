@@ -17,61 +17,33 @@ export class PagesComponent {
   menus = [
     {
       name: '工作台',
-      icon: 'assets/images/menu_icon01.svg',
-      path: '/pages/workbench',
-    },
-    {
-      name: '用户管理',
-      icon: 'assets/images/menu_icon02.svg',
-      path: '/pages/user',
-    },
-    {
-      name: '单位管理',
-      icon: 'assets/images/menu_icon03.svg',
-      path: '/pages/company',
-    },
-    {
-      name: '科室管理',
-      icon: 'assets/images/menu_icon04.svg',
-      path: '/pages/department',
-    },
-    {
-      name: '应用管理',
-      icon: 'assets/images/menu_icon05.svg',
-      path: '/pages/application',
-    },
-  ];
-
-  menus2 = [
-    {
-      name: '工作台',
       icon: 'assets/images/menu_icon11.png',
       active: 'assets/images/menu_icon12.png',
       path: '/pages/workbench',
     },
     {
-      name: '用户管理',
+      name: '通讯录',
       icon: 'assets/images/menu_icon21.png',
       active: 'assets/images/menu_icon22.png',
-      path: '/pages/user',
+      path: '/pages/members',
     },
     {
-      name: '单位管理',
+      name: '我的消息',
       icon: 'assets/images/menu_icon31.png',
       active: 'assets/images/menu_icon32.png',
-      path: '/pages/company',
+      path: '/pages/messages',
     },
     {
-      name: '科室管理',
+      name: '我的待办',
       icon: 'assets/images/menu_icon41.png',
       active: 'assets/images/menu_icon42.png',
-      path: '/pages/department',
+      path: '/pages/todo',
     },
     {
-      name: '应用管理',
+      name: '系统设置',
       icon: 'assets/images/menu_icon51.png',
       active: 'assets/images/menu_icon52.png',
-      path: '/pages/application',
+      path: '/pages/setting',
     },
   ];
 
