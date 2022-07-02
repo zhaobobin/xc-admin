@@ -36,10 +36,10 @@
             *ngFor="let item of menus"
             [routerLink]="item.path" 
             routerLinkActive="active"
-            (click)="handleClickMenu(item.name)"
+            (click)="handleClickMenu(item.path)"
           >
             <span class="icon">
-              <img [src]="currentMenuName === item.name ? item.active : item.icon" alt="active">
+              <img [src]="currentUrl === item.path ? item.active : item.icon" alt="active">
             </span>
             <span>{{ item.name }}</span>
           </a>

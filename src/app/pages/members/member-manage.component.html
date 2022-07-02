@@ -1,7 +1,264 @@
-<div nz-row class="user-manage">
-  <div nz-col nzMd="0" nzLg="1" nzXl="2" nzXXl="3"></div>
-  <div nz-col nzMd="24" nzLg="22" nzXl="20" nzXXl="18">
-    member
+<div nz-row class="member-manage">
+  <div class="member-tree-wrapper">
+    <div class="member-tree">
+      <nz-input-group [nzPrefix]="prefixIcon">
+        <input
+          type="text"
+          nz-input
+          placeholder="请搜索"
+          [(ngModel)]="searchValue"
+        />
+      </nz-input-group>
+      <ng-template #prefixIcon>
+        <i nz-icon nzType="search"></i>
+      </ng-template>
+      <nz-tree
+        #nzTreeComponent
+        [nzData]="membersTree"
+        [nzSearchValue]="searchValue"
+        [nzExpandedKeys]="defaultExpandedKeys"
+        (nzClick)="nzClick($event)"
+      >
+        <ng-template #nzTreeComponent let-node let-origin="origin">
+          <i nz-icon nzType="file" class="ant-tree-switcher-line-icon"></i>
+        </ng-template>
+      </nz-tree>
+    </div>
   </div>
-  <div nz-col nzMd="0" nzLg="1" nzXl="2" nzXXl="3"></div>
+  
+  <div class="member-detail-wrapper">
+    <div class="member-detail">
+      <div class="title">
+        <h2>{{ memberDetail.title }}</h2>
+        <button nz-button nzType="link" (click)="handleClickEditTitle()">
+          <i nz-icon nzType="edit" nzTheme="fill"></i>
+          <span>编辑</span>
+        </button>
+      </div>
+
+      <div class="breadcrumb">
+        <nz-breadcrumb nzSeparator=">">
+          <nz-breadcrumb-item *ngFor="let item of memberDetail.breadcrumb">
+            {{ item }}
+          </nz-breadcrumb-item>
+        </nz-breadcrumb>
+      </div>
+
+      <div class="section department">
+        <div class="title">
+          <img src="assets/images/members/department_icon.png" alt="icon" />
+          <h3>下级部门</h3>
+        </div>
+        <div class="btn-group">
+          <p>
+            <button
+              nz-button
+              nzType="primary"
+              nzGhost
+              (click)="handleShowDepartmentModal()"
+            >
+              <i nz-icon nzType="plus"></i>
+              <span>添加子部门</span>
+            </button>
+            <button
+              nz-button
+              nzType="primary"
+              [nzGhost]="!enableDropList"
+              (click)="changeEnableDropList()"
+            >
+              <i nz-icon nzType="swap" nzTheme="outline" class="rotate"></i>
+              <span>调整排序</span>
+            </button>
+          </p>
+        </div>
+        <ul
+          class="department"
+          cdkDropList
+          (cdkDropListDropped)="dropList($event)"
+          *ngIf="enableDropList"
+        >
+          <li
+            *ngFor="let item of this.memberDetail.department"
+            cdkDrag="enableDropList"
+          >
+            <span>{{ item.name }} ({{ item.number }}人)</span>
+            <i nz-icon nzType="right" nzTheme="outline"></i>
+          </li>
+        </ul>
+        <ul
+          class="department"
+          cdkDropList
+          (cdkDropListDropped)="dropList($event)"
+          *ngIf="!enableDropList"
+        >
+          <li *ngFor="let item of this.memberDetail.department">
+            <span>{{ item.name }} ({{ item.number }}人)</span>
+            <i nz-icon nzType="right" nzTheme="outline"></i>
+          </li>
+        </ul>
+      </div>
+
+      <nz-modal
+        [(nzVisible)]="departmentModalVisible"
+        nzTitle="选择部门"
+        nzOkText="确定"
+        nzCancelText="取消"
+        nzWrapClassName="departmentModal"
+        [nzClosable]="false"
+        [nzWidth]="1000"
+        (nzOnCancel)="handleCancelDepartmentModal()"
+        (nzOnOk)="handleOkDepartmentModal()"
+      >
+        <ng-container *nzModalContent>
+          <nz-transfer
+            nzShowSearch
+            nzSearchPlaceholder="请搜索"
+            [nzListStyle]="{ 'height.px': 500 }"
+            [nzRenderList]="[leftRenderList, null]"
+            [nzDataSource]="list"
+            [nzFilterOption]="filterOption"
+            (nzChange)="changeTransfer($event)"
+            (nzSearchChange)="searchTransfer($event)"
+            (nzSelectChange)="selectTransfer($event)"
+          >
+            <ng-template
+              #leftRenderList
+              let-items
+              let-onItemSelectAll="onItemSelectAll"
+              let-onItemSelect="onItemSelect"
+            >
+              <nz-tree
+                #tree
+                [nzData]="membersTree"
+                nzExpandAll
+                nzBlockNode
+                nzCheckable
+                nzCheckStrictly
+                (nzCheckBoxChange)="treeCheckBoxChange($event, onItemSelect)"
+              >
+                <ng-template #nzTreeTemplate let-node>
+                  <span
+                    (click)="checkBoxChange(node, onItemSelect)"
+                    class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-open"
+                  >
+                    {{ node.title }}
+                  </span>
+                </ng-template>
+              </nz-tree>
+            </ng-template>
+          </nz-transfer>
+        </ng-container>
+        
+        <div *nzModalFooter>
+          <button nz-button nzType="primary" (click)="handleOkDepartmentModal()">确定</button>
+          <button nz-button nzType="default" (click)="handleCancelDepartmentModal()" class="default">取消</button>
+        </div>
+      </nz-modal>
+
+      <div class="section members">
+        <div class="title">
+          <img src="assets/images/members/member_icon.png" alt="icon" />
+          <h3>部门人员</h3>
+        </div>
+        <div class="btn-group">
+          <p>
+            <button nz-button nzType="primary">
+              <i nz-icon nzType="plus"></i>
+              <span>添加成员</span>
+            </button>
+            <button nz-button nzType="primary" nzGhost>
+              <i nz-icon nzType="edit" nzTheme="fill"></i>
+              <span>批量导入/导出/修改</span>
+            </button>
+            <button nz-button nzType="primary" nzGhost>
+              <i nz-icon nzType="edit" nzTheme="fill"></i>
+              <span>调整部门</span>
+            </button>
+            <button
+              nz-button
+              nzType="primary"
+              [nzGhost]="!enableDropTable"
+              (click)="changeEnableDropTable()"
+            >
+              <i nz-icon nzType="swap" nzTheme="outline" class="rotate"></i>
+              <span>调整排序</span>
+            </button>
+            <button nz-button nzType="default" nzDanger>
+              <i nz-icon nzType="close"></i>
+              <span>批量删除</span>
+              <i nz-icon nzType="caret-down" nzTheme="fill"></i>
+            </button>
+          </p>
+          <button nz-button nzType="primary" nzGhost>
+            <i nz-icon nzType="plus"></i>
+            <span>邀请成员加入</span>
+          </button>
+        </div>
+        <div class="notice">
+          <p>部门内有1人未激活，<a>通知激活</a></p>
+        </div>
+
+        <div class="table">
+          <nz-table
+            #rowSelectionTable
+            [nzData]="this.memberDetail.members"
+            [nzFrontPagination]="false"
+            [nzShowPagination]="false"
+          >
+            <thead>
+              <tr>
+                <th
+                  [(nzChecked)]="checked"
+                  [nzIndeterminate]="indeterminate"
+                  (nzCheckedChange)="onAllChecked($event)"
+                ></th>
+                <th>姓名</th>
+                <th>企业邮箱</th>
+                <th>职位</th>
+                <th>工号</th>
+                <th>手机</th>
+                <th>邮箱</th>
+              </tr>
+            </thead>
+            <tbody
+              cdkDropList
+              (cdkDropListDropped)="dropTable($event)"
+              *ngIf="enableDropTable"
+            >
+              <tr *ngFor="let data of this.memberDetail.members" cdkDrag>
+                <td
+                  [nzChecked]="setOfCheckedId.has(data.id)"
+                  (nzCheckedChange)="onItemChecked(data.id, $event)"
+                ></td>
+                <td>{{ data.name }}</td>
+                <td>{{ data.enterpriseEmail }}</td>
+                <td>{{ data.position }}</td>
+                <td>{{ data.no }}</td>
+                <td>{{ data.mobile }}</td>
+                <td>{{ data.email }}</td>
+              </tr>
+            </tbody>
+            <tbody
+              cdkDropList
+              (cdkDropListDropped)="dropTable($event)"
+              *ngIf="!enableDropTable"
+            >
+              <tr *ngFor="let data of this.memberDetail.members">
+                <td
+                  [nzChecked]="setOfCheckedId.has(data.id)"
+                  (nzCheckedChange)="onItemChecked(data.id, $event)"
+                ></td>
+                <td>{{ data.name }}</td>
+                <td>{{ data.enterpriseEmail }}</td>
+                <td>{{ data.position }}</td>
+                <td>{{ data.no }}</td>
+                <td>{{ data.mobile }}</td>
+                <td>{{ data.email }}</td>
+              </tr>
+            </tbody>
+          </nz-table>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

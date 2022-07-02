@@ -19,6 +19,8 @@
     height: 100%;
     background: #fff;
     box-shadow: 0px 3px 10px 0px rgba(145, 145, 145, 0.35);
+    position: relative;
+    z-index: 99;
   }
   .layout-content {
     display: flex;
@@ -34,13 +36,11 @@
     .router-wrapper {
       display: flex;
       flex: 1;
-      justify-content: center;
-      padding-top: 1.8rem;
       overflow-y: auto;
     }
+    
   }
 }
-
 
 .header-top {
   display: flex;
@@ -159,7 +159,7 @@
   .top {
     display: flex;
     padding: .3rem 1.63rem 0;
-    height: 2rem;
+    height: 2.3rem;
     background: #EBEBEB;
     span {
       display: inline-block;

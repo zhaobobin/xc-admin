@@ -11,6 +11,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 // antd
 import { NzGridModule } from 'ng-zorro-antd/grid';
@@ -21,6 +22,10 @@ import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
+import { NzModalModule } from 'ng-zorro-antd/modal';
+import { NzTreeModule } from 'ng-zorro-antd/tree';
+import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
+import { NzTransferModule } from 'ng-zorro-antd/transfer';
 
 import { NotFoundComponent } from './pages/other/not-found.component';
 
@@ -72,6 +77,7 @@ registerLocaleData(en);
     HttpClientModule,
     BrowserAnimationsModule,
     RouterModule,
+    DragDropModule,
     NzGridModule,
     NzIconModule,
     NzButtonModule,
@@ -79,7 +85,11 @@ registerLocaleData(en);
     NzFormModule,
     NzInputModule,
     NzCheckboxModule,
-    NzDropDownModule
+    NzDropDownModule,
+    NzModalModule,
+    NzTreeModule,
+    NzBreadCrumbModule,
+    NzTransferModule
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent]

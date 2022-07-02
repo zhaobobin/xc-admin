@@ -14,6 +14,8 @@ export class PagesComponent {
 
   currentMenuName: string = '工作台';
 
+  currentUrl: string = this.router.routerState.snapshot.url;
+
   menus = [
     {
       name: '工作台',
@@ -57,7 +59,7 @@ export class PagesComponent {
     this.router.navigate(['/login']);
   }
 
-  handleClickMenu(currentMenuName: string) {
-    this.currentMenuName = currentMenuName;
+  handleClickMenu(currentUrl: string) {
+    this.currentUrl = currentUrl;
   }
 }
