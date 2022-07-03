@@ -13,16 +13,12 @@
         <i nz-icon nzType="search"></i>
       </ng-template>
       <nz-tree
-        #nzTreeComponent
+        nzShowIcon
         [nzData]="membersTree"
         [nzSearchValue]="searchValue"
         [nzExpandedKeys]="defaultExpandedKeys"
         (nzClick)="nzClick($event)"
-      >
-        <ng-template #nzTreeComponent let-node let-origin="origin">
-          <i nz-icon nzType="file" class="ant-tree-switcher-line-icon"></i>
-        </ng-template>
-      </nz-tree>
+      ></nz-tree>
     </div>
   </div>
   
@@ -130,6 +126,7 @@
               <nz-tree
                 #tree
                 [nzData]="membersTree"
+                [nzSearchValue]="departmentFilterValue"
                 nzExpandAll
                 nzBlockNode
                 nzCheckable

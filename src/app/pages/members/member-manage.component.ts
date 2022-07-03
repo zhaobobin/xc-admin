@@ -31,8 +31,22 @@ export class MemberManageComponent implements OnInit {
 
   departmentModalVisible = false; // 选择部门
   checkedNodeList: NzTreeNode[] = [];
+  departmentFilterValue = '';
 
   validateForm!: FormGroup;
+
+  nodes = [
+    {
+      title: 'parent 1',
+      key: '100',
+      expanded: true,
+      icon: 'smile',
+      children: [
+        { title: 'leaf', key: '1001', icon: 'meh', isLeaf: true },
+        { title: 'leaf', key: '1002', icon: 'frown', isLeaf: true }
+      ]
+    }
+  ];
 
   constructor(private fb: FormBuilder) {}
 
@@ -162,13 +176,12 @@ export class MemberManageComponent implements OnInit {
   }
 
   filterOption(inputValue: string, item: any): boolean {
-    console.log(item)
-    console.log(item.title.indexOf(inputValue))
     return item.title.indexOf(inputValue) > -1;
   }
 
-  searchTransfer = (ret: {}) => {
+  searchTransfer = (ret: { direction: string, value: string }) => {
     console.log('nzSearchChange', ret);
+    this.departmentFilterValue = ret.value;
   }
 
   selectTransfer(ret: {}): void {
