@@ -1,24 +1,59 @@
 <div nz-row class="member-manage">
   <div class="member-tree-wrapper">
     <div class="member-tree">
-      <nz-input-group [nzPrefix]="prefixIcon">
+      <nz-input-group [nzPrefix]="prefixIcon" [nzSuffix]="inputClearTpl">
         <input
           type="text"
           nz-input
           placeholder="请搜索"
           [(ngModel)]="searchValue"
+          (ngModelChange)="changeSearchMember($event)"
         />
       </nz-input-group>
       <ng-template #prefixIcon>
         <i nz-icon nzType="search"></i>
       </ng-template>
+      <ng-template #inputClearTpl>
+        <i
+          nz-icon
+          class="ant-input-clear-icon"
+          nzTheme="fill"
+          nzType="close-circle"
+          *ngIf="searchValue"
+          (click)="searchValue = ''"
+        ></i>
+      </ng-template>
       <nz-tree
+        *ngIf="!searchValue"
         nzShowIcon
         [nzData]="membersTree"
-        [nzSearchValue]="searchValue"
         [nzExpandedKeys]="defaultExpandedKeys"
         (nzClick)="nzClick($event)"
       ></nz-tree>
+      <div class="search-result" *ngIf="searchValue">
+        <nz-skeleton [nzLoading]="searchLoading" [nzActive]="true">
+          <dl class="apartments">
+            <dt>部门</dt>
+            <dd>
+              <p *ngFor="let item of searchResult.departments">
+                <i nz-icon nzType="apartment" nzTheme="outline"></i>
+                <span>{{ item.name }}</span>
+              </p>
+            </dd>
+          </dl>
+        </nz-skeleton>
+        <nz-skeleton [nzLoading]="searchLoading" [nzActive]="true">
+          <dl class="members">
+            <dt>成员</dt>
+            <dd>
+              <p *ngFor="let item of searchResult.members">
+                <i nz-icon nzType="user" nzTheme="outline"></i>
+                <span>{{ item.name }}</span>
+              </p>
+            </dd>
+          </dl>
+        </nz-skeleton>
+      </div>
     </div>
   </div>
   

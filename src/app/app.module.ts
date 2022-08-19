@@ -26,6 +26,7 @@ import { NzModalModule } from 'ng-zorro-antd/modal';
 import { NzTreeModule } from 'ng-zorro-antd/tree';
 import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
 import { NzTransferModule } from 'ng-zorro-antd/transfer';
+import { NzSkeletonModule } from 'ng-zorro-antd/skeleton';
 
 import { NotFoundComponent } from './pages/other/not-found.component';
 
@@ -89,7 +90,8 @@ registerLocaleData(en);
     NzModalModule,
     NzTreeModule,
     NzBreadCrumbModule,
-    NzTransferModule
+    NzTransferModule,
+    NzSkeletonModule
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent]

@@ -25,6 +25,13 @@ export class MemberManageComponent implements OnInit {
   indeterminate = false;
   setOfCheckedId = new Set<number>();
 
+  timer?: ReturnType<typeof setTimeout> = undefined; // 搜索防抖
+  searchLoading = false;
+  searchResult: { departments: any[], members: any[] } = {
+    departments: [],
+    members: []
+  };
+
   enableDropList = false; // 列表能否拖拽
   
   enableDropTable = false; // 表格能否拖拽
@@ -194,6 +201,33 @@ export class MemberManageComponent implements OnInit {
       node.isDisabled = isDisabled;
       node.isChecked = isDisabled;
     });
+  }
+
+  changeSearchMember = (value: string) => {
+    if (this.timer) {
+      clearTimeout(this.timer);
+    }
+    this.searchLoading = true;
+    this.timer = setTimeout(async () => {
+      console.log(value)
+      // TODO search
+      this.searchLoading = false;
+      this.searchResult = {
+        departments: [
+          { name: '移动端对接测试' },
+          { name: '统一门户测试框架' },
+          { name: '人力资源和社会保障测试' },
+        ],
+        members: [
+          { name: 'OA测试一号' },
+          { name: 'OA测试二号' },
+          { name: '人力资源和社会保障测试' },
+          { name: '洪佳' },
+          { name: '何鑫' },
+          { name: '姚宇峰' },
+        ]
+      };
+    }, 500)
   }
 
 }
